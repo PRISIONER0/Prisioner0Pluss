@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PRISIONER0 - Tu descarga está casi lista</title>
+
+    <link rel="stylesheet" href="assets/css/puente.css">
+</head>
+
+<body>
+
+    <main class="bridge-container">
+
+        <div class="bridge-card">
+
+            <div class="bridge-icon">
+                ⏳
+            </div>
+
+            <h1>
+                Tu descarga está casi lista
+            </h1>
+
+            <p class="bridge-text">
+                Completá este último paso para continuar con tu descarga.
+            </p>
+
+            <div class="bridge-warning">
+                <strong>⚠️ Atención</strong>
+
+                <span>
+                    Este proceso requiere un segundo paso.
+                    No estás volviendo atrás.
+                </span>
+            </div>
+
+            <div class="bridge-loader">
+
+                <div class="spinner"></div>
+
+                <p id="countdown">
+                    Preparando...
+                </p>
+
+            </div>
+
+            <button
+                id="continueButton"
+                class="continue-button"
+                disabled
+            >
+                CONTINUAR
+            </button>
+
+            <div class="vip-section">
+
+                <div class="vip-icon">
+                    👑
+                </div>
+
+                <h2>
+                    ¿Querés evitar este proceso?
+                </h2>
+
+                <p>
+                    Con PRISIONER0 VIP disfrutás de descargas directas,
+                    sin pasos adicionales ni publicidad.
+                </p>
+
+                <a
+                    href="vip.html"
+                    class="vip-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    HACERME VIP
+                </a>
+
+                <div class="vip-price">
+                    $1.99 / mes
+                </div>
+
+            </div>
+
+            <p
+                id="errorMessage"
+                class="error-message"
+            ></p>
+
+        </div>
+
+    </main>
+
+    <script>
+
+        const params = new URLSearchParams(
+            window.location.search
+        );
+
+        const destination =
+            params.get("url");
+
+        const countdown =
+            document.getElementById(
+                "countdown"
+            );
+
+        const continueButton =
+            document.getElementById(
+                "continueButton"
+            );
+
+        const errorMessage =
+            document.getElementById(
+                "errorMessage"
+            );
+
+        let seconds = 3;
+
+        // ============================================
+        // COMPROBAR ENLACE
+        // ============================================
+
+        if (!destination) {
+
+            countdown.style.display = "none";
+
+            errorMessage.textContent =
+                "No se encontró el enlace de descarga.";
+
+        } else {
+
+            countdown.textContent =
+                `Esperá ${seconds} segundos...`;
+
+            const timer =
+                setInterval(function () {
+
+                    seconds--;
+
+                    if (seconds > 0) {
+
+                        countdown.textContent =
+                            `Esperá ${seconds} segundos...`;
+
+                    } else {
+
+                        clearInterval(timer);
+
+                        countdown.textContent =
+                            "✓ Ya podés continuar";
+
+                        continueButton.disabled =
+                            false;
+
+                    }
+
+                }, 1000);
+
+        }
+
+        // ============================================
+        // CONTINUAR
+        // ============================================
+
+        continueButton.addEventListener(
+            "click",
+            function () {
+
+                if (!destination) {
+                    return;
+                }
+
+                window.location.href =
+                    destination;
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
