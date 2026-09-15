@@ -2883,6 +2883,20 @@ CELULARES PEQUEÑOS (HASTA 380px)
         padding: 12px;
         font-size: 14px;
     }
+/* AJUSTE PARA MÓVILES: Evita que el anuncio se corte o expanda la pantalla */
+.ad-sticky-bottom {
+    overflow: hidden;
+    max-width: 100vw;
+}
+
+.ad-sticky-bottom iframe, 
+.ad-sticky-bottom ins, 
+.ad-sticky-bottom img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+}
 }
 
 
