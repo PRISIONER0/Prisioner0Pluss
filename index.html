@@ -421,17 +421,19 @@ window.document.querySelectorAll||(document.querySelectorAll=document.body.query
     </div>
 </footer>
 
-    <!-- SCRIPT DE VERIFICACIÓN DE EDAD Y UTILIDADES -->
+<!-- SCRIPT DE VERIFICACIÓN DE EDAD Y UTILIDADES -->
     <script>
-        // Verificar si el usuario ya confirmó su edad previamente
+        // Verificar si el usuario ya confirmó su edad en esta sesión del navegador
         document.addEventListener("DOMContentLoaded", function() {
-            if (localStorage.getItem("ageVerified") === "true") {
+            if (sessionStorage.getItem("ageVerified") === "true") {
                 document.getElementById("ageVerifyOverlay").style.display = "none";
+                document.body.classList.remove("ads-locked"); // Desbloquea los anuncios si ya aceptó
             }
         });
 
         function confirmAge() {
-            localStorage.setItem("ageVerified", "true");
+            sessionStorage.setItem("ageVerified", "true");
+            document.body.classList.remove("ads-locked"); // Desbloquea los anuncios al aceptar
             let overlay = document.getElementById("ageVerifyOverlay");
             overlay.style.opacity = "0";
             overlay.style.transition = "opacity 0.3s ease";
