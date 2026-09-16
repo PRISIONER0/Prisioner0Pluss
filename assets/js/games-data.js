@@ -65,6 +65,15 @@ const games = [
     // ================================
     
     {
+        title: "Your stalker jayce blackwood",
+        page: "your-stalker-jayce-blackwood.html",
+        cover: "your-stalker-jayce-blackwood.png",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Boyfriend to death 2 fresh blood",
         page: "boyfriend-to-death2.html",
         cover: "boyfriend-to-death2.webp",
