@@ -24,7 +24,7 @@ const games = [
         page: "your-affliction-lester-diaz.html",
         cover: "your-affliction-lester-diaz.webp",
         featured: true,
-        language: "Español",
+        language: "Español/Portuguese",
         pc: true,
         android: true,
     },
