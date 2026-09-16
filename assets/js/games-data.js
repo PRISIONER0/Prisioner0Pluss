@@ -65,6 +65,15 @@ const games = [
     // ================================
     
     {
+        title: "Your hero jayce blackwood 1.2",
+        page: "your-hero-jayce-blackwood.html",
+        cover: "your-hero-jayce-blackwood.png",
+        featured: false,
+        language: "Español",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Criminally yours DLC",
         page: "criminally-yours.html",
         cover: "criminally-yours.webp",
