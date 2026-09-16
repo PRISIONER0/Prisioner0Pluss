@@ -48,16 +48,16 @@ const games = [
         pc: true,
         android: true,
     },
+
     {
-        title: "Boyfriend to death 2 fresh blood",
-        page: "boyfriend-to-death2.html",
-        cover: "boyfriend-to-death2.webp",
+        title: "Your hero jayce blackwood 1.2",
+        page: "your-hero-jayce-blackwood.html",
+        cover: "your-hero-jayce-blackwood.png",
         featured: true,
-        language: "Español",
+        language: "Español/Portuguese",
         pc: true,
         android: true,
     },
-
 
     // ================================
     // MÁS JUEGOS (VER MÁS)
@@ -65,9 +65,9 @@ const games = [
     // ================================
     
     {
-        title: "Your hero jayce blackwood 1.2",
-        page: "your-hero-jayce-blackwood.html",
-        cover: "your-hero-jayce-blackwood.png",
+        title: "Boyfriend to death 2 fresh blood",
+        page: "boyfriend-to-death2.html",
+        cover: "boyfriend-to-death2.webp",
         featured: false,
         language: "Español",
         pc: true,
