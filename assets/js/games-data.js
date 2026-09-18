@@ -65,6 +65,15 @@ const games = [
     // ================================
     
     {
+        title: "Wh4t 1 W0ulndt d0 (DAVID)",
+        page: "wh4t-1-w0ulndt-d0.html",
+        cover: "wh4t-1-w0ulndt-d0.png",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Your stalker jayce blackwood",
         page: "your-stalker-jayce-blackwood.html",
         cover: "your-stalker-jayce-blackwood.png",
