@@ -66,12 +66,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                 ad.remove();
             });
 
-        // *QUITAR EXOCLICK - BANNER ADHESIVO*
-        const exoSticky = document.getElementById("exoSticky");
-
-        if (exoSticky) {
-            exoSticky.remove();
-        }
+        // *BLOQUEAR PUBLICIDAD EXOCLICK*
+        document.body.classList.add("ads-locked");
 
         return;
     }
