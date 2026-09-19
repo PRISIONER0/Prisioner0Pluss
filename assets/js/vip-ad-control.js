@@ -59,11 +59,19 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     if (vipActivo) {
 
+        // *QUITAR BANNERS NORMALES*
         document
             .querySelectorAll(".ad-container")
             .forEach(ad => {
                 ad.remove();
             });
+
+        // *QUITAR EXOCLICK - BANNER ADHESIVO*
+        const exoSticky = document.getElementById("exoSticky");
+
+        if (exoSticky) {
+            exoSticky.remove();
+        }
 
         return;
     }
