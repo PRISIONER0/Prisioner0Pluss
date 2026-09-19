@@ -41,15 +41,6 @@ body.ads-locked div[id*="zone"] {
     box-shadow: none !important;
 }
 
-/* FORZAR AL ANUNCIO A ADAPTARSE AL CELULAR */
-.ad-sticky-bottom iframe, 
-.ad-sticky-bottom ins {
-    max-width: 100% !important;
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    margin: 0 auto !important;
-}
 
 * {
     margin: 0;
