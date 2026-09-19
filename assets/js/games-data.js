@@ -65,6 +65,15 @@ const games = [
     // ================================
     
     {
+        title: "Our life moment 2 especial",
+        page: "our-life.html",
+        cover: "our-life.png",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Wh4t 1 W0ulndt d0 (DAVID)",
         page: "wh4t-1-w0ulndt-d0.html",
         cover: "wh4t-1-w0ulndt-d0.png",
