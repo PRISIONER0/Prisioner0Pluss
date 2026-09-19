@@ -48,38 +48,49 @@
             </div>
         </div>
     </div>
+    
 <script>
 function confirmAge() {
     localStorage.setItem("ageVerified", "true");
 
     document.getElementById("ageVerifyOverlay").style.display = "none";
 
-    // Mostrar contenedor del anuncio
-    const exoContainer = document.getElementById("exoStickyContainer");
-
-    if (exoContainer) {
-        exoContainer.style.display = "block";
-    }
-
-    // Cargar ExoClick DESPUÉS de confirmar la edad
+    // Crear el anuncio DESPUÉS de confirmar la edad
     if (!window.exoLoaded) {
         window.exoLoaded = true;
 
-        const script = document.createElement("script");
+        const container = document.getElementById("exoStickyContainer");
 
+        if (!container) return;
+
+        // Crear el bloque del anuncio
+        const ad = document.createElement("ins");
+        ad.id = "exoSticky";
+        ad.className = "eas6a97888e17";
+        ad.setAttribute("data-zoneid", "6029832");
+
+        container.appendChild(ad);
+
+        // Preparar ExoClick
+        window.AdProvider = window.AdProvider || [];
+
+        // Cargar el proveedor
+        const script = document.createElement("script");
         script.async = true;
         script.type = "application/javascript";
         script.src = "https://a.magsrv.com/ad-provider.js";
 
         script.onload = function () {
-            window.AdProvider = window.AdProvider || [];
-            window.AdProvider.push({"serve": {}});
+            window.AdProvider.push({
+                "serve": {}
+            });
         };
 
         document.head.appendChild(script);
     }
 }
 </script>
+
 <!-- EXOCLICK - BANNER PC -->
 <div class="ad-container ad-desktop" id="exoTop">
     <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
