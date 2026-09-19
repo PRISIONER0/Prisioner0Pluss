@@ -48,48 +48,6 @@
             </div>
         </div>
     </div>
-    
-<script>
-function confirmAge() {
-    localStorage.setItem("ageVerified", "true");
-
-    document.getElementById("ageVerifyOverlay").style.display = "none";
-
-    // Crear el anuncio DESPUÉS de confirmar la edad
-    if (!window.exoLoaded) {
-        window.exoLoaded = true;
-
-        const container = document.getElementById("exoStickyContainer");
-
-        if (!container) return;
-
-        // Crear el bloque del anuncio
-        const ad = document.createElement("ins");
-        ad.id = "exoSticky";
-        ad.className = "eas6a97888e17";
-        ad.setAttribute("data-zoneid", "6029832");
-
-        container.appendChild(ad);
-
-        // Preparar ExoClick
-        window.AdProvider = window.AdProvider || [];
-
-        // Cargar el proveedor
-        const script = document.createElement("script");
-        script.async = true;
-        script.type = "application/javascript";
-        script.src = "https://a.magsrv.com/ad-provider.js";
-
-        script.onload = function () {
-            window.AdProvider.push({
-                "serve": {}
-            });
-        };
-
-        document.head.appendChild(script);
-    }
-}
-</script>
 
 <!-- EXOCLICK - BANNER PC -->
 <div class="ad-container ad-desktop" id="exoTop">
@@ -435,20 +393,14 @@ window.document.querySelectorAll||(document.querySelectorAll=document.body.query
         <i class="fa-solid fa-arrow-up"></i>
     </div>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            let btn = document.getElementById('backToTop');
-            if (window.scrollY > 300) {
-                btn.classList.add('show');
-            } else {
-                btn.classList.remove('show');
-            }
-        });
+<!-- *EXOCLICK - BANNER ADHESIVO* -->
+<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
+<ins id="exoSticky" class="eas6a97888e17" data-zoneid="6029832"></ins>
+
+<script>
+(AdProvider = window.AdProvider || []).push({"serve": {}});
+</script>
 
 </body>
 </html>
