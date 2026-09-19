@@ -67,7 +67,7 @@ const games = [
     {
         title: "Our life moment 2 especial",
         page: "our-life.html",
-        cover: "our-life.png",
+        cover: "our-life.jpg",
         featured: false,
         language: "Español/Portuguese",
         pc: true,
