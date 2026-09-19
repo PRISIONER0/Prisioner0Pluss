@@ -109,16 +109,16 @@
 /* OCULTAR ANUNCIOS MIENTRAS NO SE VERIFIQUE LA EDAD */
 /* BLOQUEO TOTAL DE ANUNCIOS HASTA QUE SE VALIDE LA EDAD */
 
-body.ads-locked .ad-container,
-body.ads-locked iframe,
-body.ads-locked [class*="eas"],
-body.ads-locked div[id*="zone"] {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
+/* Mientras el modal +18 está abierto, queda por encima de los anuncios */
+#ageVerifyOverlay {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    inset: 0 !important;
 }
 
+body:has(#ageVerifyOverlay:not([style*="display: none"])) #exoSticky {
+    z-index: -1 !important;
+}
 
 * {
     margin: 0;
