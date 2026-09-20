@@ -36,8 +36,15 @@
  <ins class="eas6a97888e2" data-zoneid="6029778"></ins> 
  <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
 
- <script type="application/javascript">
+<script type="application/javascript">
 (function() {
+
+    const vipSession = localStorage.getItem("prisioner0_vip_session");
+
+    if (vipSession) {
+        return;
+    }
+    
     function randStr(e,t){for(var n="",r=t||"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",o=0;o<e;o++)n+=r.charAt(Math.floor(Math.random()*r.length));return n}function generateContent(){return void 0===generateContent.val&&(generateContent.val="document.dispatchEvent("+randStr(4*Math.random()+3)+");"),generateContent.val}try{Object.defineProperty(document.currentScript,"innerHTML",{get:generateContent}),Object.defineProperty(document.currentScript,"textContent",{get:generateContent})}catch(e){};
 
     //version 11.0.0
