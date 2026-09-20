@@ -108,7 +108,15 @@
    ================================================     */
 /* OCULTAR ANUNCIOS MIENTRAS NO SE VERIFIQUE LA EDAD */
 /* BLOQUEO TOTAL DE ANUNCIOS HASTA QUE SE VALIDE LA EDAD */
-
+body.ads-locked .ad-container,
+body.ads-locked iframe,
+body.ads-locked [class*="eas"],
+body.ads-locked div[id*="zone"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
 /* Mientras el modal +18 está abierto, queda por encima de los anuncios */
 #ageVerifyOverlay {
     position: fixed !important;
