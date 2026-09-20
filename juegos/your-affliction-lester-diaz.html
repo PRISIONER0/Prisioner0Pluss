@@ -45,19 +45,25 @@
   gtag('config', 'G-BNZSMBCJ0D');
 </script>
 
-<!-- *Adcash* -->
-<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-
 </head>
 
 <body data-game="your-affliction-lester-diaz.html">
 
-<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
- <ins class="eas6a97888e2" data-zoneid="6029778"></ins> 
- <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+<!-- EXOCLICK - BANNER PC -->
+<div class="ad-container ad-desktop" id="exoTop"></div>
 
- <script type="application/javascript">
+<!-- EXOCLICK - BANNER MÓVIL -->
+<div class="ad-container ad-mobile" id="exoTopMobile"></div>
+
+<!-- EXOCLICK - POPUNDER -->
+<script type="application/javascript">
 (function() {
+
+    const vipSession = localStorage.getItem("prisioner0_vip_session");
+
+    if (vipSession) {
+        return;
+    }
     function randStr(e,t){for(var n="",r=t||"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",o=0;o<e;o++)n+=r.charAt(Math.floor(Math.random()*r.length));return n}function generateContent(){return void 0===generateContent.val&&(generateContent.val="document.dispatchEvent("+randStr(4*Math.random()+3)+");"),generateContent.val}try{Object.defineProperty(document.currentScript,"innerHTML",{get:generateContent}),Object.defineProperty(document.currentScript,"textContent",{get:generateContent})}catch(e){};
 
     //version 11.0.0
@@ -115,28 +121,6 @@ window.document.querySelectorAll||(document.querySelectorAll=document.body.query
         </nav>
     </div>
 </header>
-
-<!-- 
-    ==================================================
-    BLOQUES DE ANUNCIOS OCULTOS TEMPORALMENTE (ADNET)
-    ==================================================
-
-    <div class="ad-container ad-desktop" id="adTop">
-        <script>
-            aclib.runBanner({
-                zoneId: '12031562',
-            });
-        </script>
-    </div>
-
-    <div class="ad-container ad-mobile" id="adTopMobile">
-        <script>
-            aclib.runBanner({
-                zoneId: '12031670',
-            });
-        </script>
-    </div>
--->
 
 <main>
 
@@ -259,28 +243,6 @@ Comienzas un nuevo trabajo como recepcionista, pero pronto descubres que tu comp
 
 </main>
 
-<!-- 
-    ==================================================
-    ANUNCIOS INFERIORES OCULTOS TEMPORALMENTE
-    ==================================================
-
-    <div class="ad-container ad-desktop" id="adBottom">
-        <script>
-            aclib.runBanner({
-                zoneId: '12031562',
-            });
-        </script>
-    </div>
-
-    <div class="ad-container ad-mobile" id="adBottomMobile">
-        <script>
-            aclib.runBanner({
-                zoneId: '12031670',
-            });
-        </script>
-    </div>
--->
-
 <footer class="site-footer">
     <div class="footer-content">
         <div class="footer-brand">
@@ -317,6 +279,9 @@ Comienzas un nuevo trabajo como recepcionista, pero pronto descubres que tu comp
 <script src="../assets/js/vip-ad-control.js"></script>
 <script src="../assets/js/vip-downloads.js"></script>
 <script src="../assets/js/tutoriales.js"></script>
+
+<!-- *CONTENEDOR EXOCLICK - BANNER ADHESIVO* -->
+<div id="exoStickyContainer"></div>
 
 </body>
 </html>
