@@ -1,7 +1,7 @@
-// =====================================================
-// PRISIONER0 VIP
-// CONTROL DE PUBLICIDAD
-// =====================================================
+// *=====================================================*
+// *PRISIONER0 VIP*
+// *CONTROL DE PUBLICIDAD*
+// *=====================================================*
 
 document.addEventListener("DOMContentLoaded", async function () {
 
@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     let vipActivo = false;
 
-    // =================================================
-    // COMPROBAR SESIÓN VIP
-    // =================================================
+    // *=================================================*
+    // *COMPROBAR SESIÓN VIP*
+    // *=================================================*
 
     if (sessionToken) {
 
@@ -23,9 +23,11 @@ document.addEventListener("DOMContentLoaded", async function () {
                 `${VIP_API}/check-session`,
                 {
                     method: "POST",
+
                     headers: {
                         "Content-Type": "application/json"
                     },
+
                     body: JSON.stringify({
                         session_token: sessionToken
                     })
@@ -44,7 +46,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                 "Error comprobando VIP para publicidad:",
                 error
             );
-
         }
     }
 
@@ -53,99 +54,125 @@ document.addEventListener("DOMContentLoaded", async function () {
         vipActivo
     );
 
-    // =================================================
-    // VIP → NO CARGAR PUBLICIDAD
-    // =================================================
+
+    // *=================================================*
+    // *VIP → NO CARGAR PUBLICIDAD*
+    // *=================================================*
 
     if (vipActivo) {
 
-        // *QUITAR BANNERS NORMALES*
-        document
-            .querySelectorAll(".ad-container")
-            .forEach(ad => {
-                ad.remove();
-            });
-
-        // *BLOQUEAR PUBLICIDAD EXOCLICK*
-        document.body.classList.add("ads-locked");
-
-        return;
-    }
-
-    // =================================================
-    // USUARIO NORMAL → CARGAR PUBLICIDAD
-    // =================================================
-
-    if (
-        typeof aclib === "undefined" ||
-        typeof aclib.runBanner !== "function"
-    ) {
-
-        console.error(
-            "La publicidad no está disponible."
+        console.log(
+            "PRISIONER0 VIP: publicidad bloqueada."
         );
 
         return;
     }
 
-    // =================================================
-    // BANNER PC SUPERIOR
-    // =================================================
+
+    // *=================================================*
+    // *USUARIO NORMAL → CARGAR PUBLICIDAD*
+    // *=================================================*
+
+
+    // *=================================================*
+    // *BANNER PC SUPERIOR - EXOCLICK*
+    // *=================================================*
 
     const topDesktop =
-        document.getElementById("adTop");
+        document.getElementById("exoTop");
 
     if (topDesktop) {
 
-        aclib.runBanner({
-            zoneId: "12031562"
-        });
+        const ad = document.createElement("ins");
 
+        ad.className = "eas6a97888e2";
+        ad.setAttribute("data-zoneid", "6029778");
+
+        topDesktop.appendChild(ad);
     }
 
-    // =================================================
-    // BANNER PC INFERIOR
-    // =================================================
 
-    const bottomDesktop =
-        document.getElementById("adBottom");
-
-    if (bottomDesktop) {
-
-        aclib.runBanner({
-            zoneId: "12031562"
-        });
-
-    }
-
-    // =================================================
-    // BANNER MÓVIL SUPERIOR
-    // =================================================
+    // *=================================================*
+    // *BANNER MÓVIL SUPERIOR - EXOCLICK*
+    // *=================================================*
 
     const topMobile =
-        document.getElementById("adTopMobile");
+        document.getElementById("exoTopMobile");
 
     if (topMobile) {
 
-        aclib.runBanner({
-            zoneId: "12031670"
-        });
+        const ad = document.createElement("ins");
 
+        ad.className = "eas6a97888e10";
+        ad.setAttribute("data-zoneid", "6033958");
+
+        topMobile.appendChild(ad);
     }
 
-    // =================================================
-    // BANNER MÓVIL INFERIOR
-    // =================================================
 
-    const bottomMobile =
-        document.getElementById("adBottomMobile");
+    // *=================================================*
+    // *BANNER ADHESIVO - EXOCLICK*
+    // *=================================================*
 
-    if (bottomMobile) {
+    const stickyContainer =
+        document.getElementById("exoStickyContainer");
 
-        aclib.runBanner({
-            zoneId: "12031670"
-        });
+    if (stickyContainer) {
 
+        const ad = document.createElement("ins");
+
+        ad.id = "exoSticky";
+        ad.className = "eas6a97888e17";
+        ad.setAttribute("data-zoneid", "6029832");
+
+        stickyContainer.appendChild(ad);
     }
+
+
+    // *=================================================*
+    // *CARGAR EXOCLICK*
+    // *=================================================*
+
+    const exoScript =
+        document.createElement("script");
+
+    exoScript.async = true;
+
+    exoScript.type =
+        "application/javascript";
+
+    exoScript.src =
+        "https://a.magsrv.com/ad-provider.js";
+
+    exoScript.onload = function () {
+
+        window.AdProvider =
+            window.AdProvider || [];
+
+        window.AdProvider.push({
+            "serve": {}
+        });
+    };
+
+    document.head.appendChild(exoScript);
+
+
+    // *=================================================*
+    // *CARGAR POPUNDER SOLO PARA NO VIP*
+    // *=================================================*
+
+    const popunderScript =
+        document.createElement("script");
+
+    popunderScript.type =
+        "application/javascript";
+
+    popunderScript.src =
+        "assets/js/exo-popunder.js";
+
+    document.body.appendChild(
+        popunderScript
+    );
+
 
 });
