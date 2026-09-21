@@ -65,7 +65,7 @@ const games = [
     // ================================
     
     {
-        title: "the-price-of-flesh",
+        title: "The price of flesh",
         page: "the-price-of-flesh.html",
         cover: "the-price-of-flesh.webp",
         featured: false,
