@@ -52,7 +52,7 @@ const games = [
     {
         title: "Your hero jayce blackwood 1.2",
         page: "your-hero-jayce-blackwood.html",
-        cover: "your-hero-jayce-blackwood.png",
+        cover: "your-hero-jayce-blackwood.webp",
         featured: true,
         language: "Español/Portuguese",
         pc: true,
@@ -65,9 +65,18 @@ const games = [
     // ================================
     
     {
+        title: "the-price-of-flesh",
+        page: "the-price-of-flesh.html",
+        cover: "the-price-of-flesh.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Our life moment 2 especial",
         page: "our-life.html",
-        cover: "our-life.jpg",
+        cover: "our-life.webp",
         featured: false,
         language: "Español/Portuguese",
         pc: true,
@@ -76,7 +85,7 @@ const games = [
     {
         title: "Wh4t 1 W0ulndt d0 (DAVID)",
         page: "wh4t-1-w0ulndt-d0.html",
-        cover: "wh4t-1-w0ulndt-d0.png",
+        cover: "wh4t-1-w0ulndt-d0.webp",
         featured: false,
         language: "Español/Portuguese",
         pc: true,
@@ -85,7 +94,7 @@ const games = [
     {
         title: "Your stalker jayce blackwood",
         page: "your-stalker-jayce-blackwood.html",
-        cover: "your-stalker-jayce-blackwood.png",
+        cover: "your-stalker-jayce-blackwood.webp",
         featured: false,
         language: "Español/Portuguese",
         pc: true,
