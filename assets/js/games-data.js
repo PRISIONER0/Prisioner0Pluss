@@ -65,6 +65,15 @@ const games = [
     // ================================
     
     {
+        title: "Welcome home",
+        page: "welcome-home.html",
+        cover: "welcome-home.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "The price of flesh",
         page: "the-price-of-flesh.html",
         cover: "the-price-of-flesh.webp",
