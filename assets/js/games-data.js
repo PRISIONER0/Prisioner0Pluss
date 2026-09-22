@@ -65,7 +65,7 @@ const games = [
     // ================================
     
     {
-        title: "Welcome home",
+        title: "Welcome home NSFW",
         page: "welcome-home.html",
         cover: "welcome-home.webp",
         featured: false,
