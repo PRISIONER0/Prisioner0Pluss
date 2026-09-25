@@ -65,6 +65,24 @@ const games = [
     // ================================
     
     {
+        title: "Adopt a boyfriend",
+        page: "adopt-a-boyfriend.html",
+        cover: "adopt-a-boyfriend.webp",
+        featured: false,
+        language: "Español",
+        pc: true,
+        android: true,
+    },
+    {
+        title: "You Kill Me Every Time",
+        page: "ykmetstrade.html",
+        cover: "ykmetstrade.webp",
+        featured: false,
+        language: "Español",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Till death do us part",
         page: "till-death-do-us-part.html",
         cover: "till-death-do-us-part.webp",
