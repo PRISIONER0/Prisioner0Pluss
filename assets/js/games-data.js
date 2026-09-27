@@ -65,6 +65,15 @@ const games = [
     // ================================
     
     {
+        title: "Binary star hero",
+        page: "binary-star-hero.html",
+        cover: "binary-star-hero.webp",
+        featured: false,
+        language: "Español",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Adopt a boyfriend",
         page: "adopt-a-boyfriend.html",
         cover: "adopt-a-boyfriend.webp",
