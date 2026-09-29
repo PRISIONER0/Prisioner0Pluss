@@ -65,6 +65,15 @@ const games = [
     // ================================
     
     {
+        title: "Heart cage demo",
+        page: "heart-cage-demo.html",
+        cover: "heart-cage-demo.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Binary star hero",
         page: "binary-star-hero.html",
         cover: "binary-star-hero.webp",
