@@ -65,6 +65,15 @@ const games = [
     // ================================
     
     {
+        title: "heart cage DLC patreon",
+        page: "heart-cage-dlc-patreon.html",
+        cover: "heart-cage-dlc-patreon.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Heart cage demo",
         page: "heart-cage-demo.html",
         cover: "heart-cage-demo.webp",
