@@ -65,7 +65,7 @@ const games = [
     // ================================
     
     {
-        title: "heart cage DLC patreon",
+        title: "Heart cage DLC patreon",
         page: "heart-cage-dlc-patreon.html",
         cover: "heart-cage-demo.webp",
         featured: false,
