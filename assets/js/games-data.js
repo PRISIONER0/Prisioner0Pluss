@@ -65,6 +65,15 @@ const games = [
     // ================================
     
     {
+        title: "Bewitching sinners + DLC",
+        page: "bewitching-sinners-visual-novel.html",
+        cover: "bewitching-sinners-visual-novel.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Yours game",
         page: "yoursgame.html",
         cover: "yoursgame.webp",
