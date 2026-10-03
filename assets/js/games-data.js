@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-    
+        
+    {
+        title: "Hunter hunted",
+        page: "hunter-hunted.html",
+        cover: "hunter-hunted.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
     {
         title: "Bewitching sinners + DLC",
         page: "bewitching-sinners-visual-novel.html",
