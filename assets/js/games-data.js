@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-        
+             
+    {
+        title: "Last missing",
+        page: "last-missing.html",
+        cover: "last-missing.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },   
     {
         title: "Hunter hunted",
         page: "hunter-hunted.html",
