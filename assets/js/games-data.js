@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-             
+                  
+    {
+        title: "Darling darling dead",
+        page: "darling-darling-dead.html",
+        cover: "darling-darling-dead.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },          
     {
         title: "Last missing",
         page: "last-missing.html",
