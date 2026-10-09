@@ -97,7 +97,6 @@ function showVipAccessUnlocked() {
             <i class="fa-solid fa-desktop"></i>
 
             <span class="vip-flags">
-                <img src="https://flagcdn.com/20x15/us.png" alt="English">
                 <img src="https://flagcdn.com/20x15/es.png" alt="Español">
                 <img src="https://flagcdn.com/20x15/br.png" alt="Português">
             </span>
@@ -113,7 +112,6 @@ function showVipAccessUnlocked() {
             <i class="fa-solid fa-mobile-screen-button"></i>
 
             <span class="vip-flags">
-                <img src="https://flagcdn.com/20x15/us.png" alt="English">
                 <img src="https://flagcdn.com/20x15/es.png" alt="Español">
                 <img src="https://flagcdn.com/20x15/br.png" alt="Português">
             </span>
