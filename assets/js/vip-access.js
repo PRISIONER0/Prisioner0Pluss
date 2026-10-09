@@ -167,7 +167,7 @@ async function requestVipDownload(platform) {
         if (platform === "pc") {
 
             window.location.href =
-                "https://github.com/PRISIONER0/ACupofDreams-Espa-ol/releases/download/v1.0/kingdom-of-marionettes-CAP2-PRISIONER0.zip";
+                "https://github.com/PRISIONER0/ACupofDreams-Espa-ol/releases/download/v1.0/ADatewithDeath-PRISIONER0.zip";
 
             return;
         }
@@ -179,7 +179,7 @@ async function requestVipDownload(platform) {
         if (platform === "android") {
 
             window.location.href =
-                "https://github.com/PRISIONER0/ACupofDreams-Espa-ol/releases/download/v1.0/komv2.prisioner0-2.0-1791390618-release.apk";
+                "https://github.com/PRISIONER0/ACupofDreams-Espa-ol/releases/download/v1.0/adwd.prisioner0-2.5-1791512041-release.apk";
 
             return;
         }
