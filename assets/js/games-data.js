@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-                  
+                      
+    {
+        title: "Darling darling devious",
+        page: "darling-darling-devious.html",
+        cover: "darling-darling-devious.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },              
     {
         title: "Darling darling dead",
         page: "darling-darling-dead.html",

@@ -1889,6 +1889,332 @@ RESPONSIVE DESIGN (MÓVILES Y TABLETS)
     }
 }
 
+/* =========================================
+   TARJETA ACCESO ANTICIPADO VIP
+   ========================================= */
+
+.vip-featured-card {
+    position: relative;
+
+    width: 100%;
+    max-width: 380px;
+
+    margin: 0 auto;
+
+    background: #151515;
+
+    border: 1px solid rgba(255, 215, 80, 0.75);
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 8px rgba(255, 200, 50, 0.18),
+        0 0 20px rgba(255, 200, 50, 0.08);
+
+    animation: vipCardGlow 7s ease-in-out infinite;
+}
+
+
+/* Brillo periódico */
+
+@keyframes vipCardGlow {
+
+    0%, 72%, 100% {
+        box-shadow:
+            0 0 8px rgba(255, 200, 50, 0.18),
+            0 0 20px rgba(255, 200, 50, 0.08);
+    }
+
+    78% {
+        box-shadow:
+            0 0 12px rgba(255, 215, 80, 0.65),
+            0 0 28px rgba(255, 200, 50, 0.45),
+            0 0 55px rgba(255, 180, 0, 0.20);
+    }
+
+    84% {
+        box-shadow:
+            0 0 8px rgba(255, 200, 50, 0.25),
+            0 0 20px rgba(255, 200, 50, 0.10);
+    }
+}
+
+
+/* Etiqueta */
+
+.vip-featured-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+
+    padding: 6px 10px;
+
+    background: rgba(20, 16, 5, 0.92);
+
+    border: 1px solid rgba(255, 215, 80, 0.85);
+    border-radius: 6px;
+
+    color: #ffd95a;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    box-shadow:
+        0 0 10px rgba(255, 200, 50, 0.25);
+}
+
+
+/* Imagen */
+
+.vip-featured-image {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+}
+
+
+/* Contenido */
+
+.vip-featured-content {
+    padding: 15px;
+
+    text-align: center;
+}
+
+
+/* Título */
+
+.vip-featured-content h3 {
+    margin: 0 0 10px;
+
+    color: #ffffff;
+
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+
+/* PC / Android */
+
+.vip-featured-info {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 6px;
+
+    color: #cccccc;
+
+    font-size: 0.85rem;
+}
+
+
+/* Idiomas */
+
+.vip-featured-language {
+    margin-bottom: 14px;
+
+    color: #cccccc;
+
+    font-size: 0.85rem;
+}
+
+
+/* Botón */
+
+.vip-featured-button {
+    display: block;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 10px 12px;
+
+    background: linear-gradient(
+        135deg,
+        #b8860b,
+        #ffd75a,
+        #b8860b
+    );
+
+    border: 1px solid #ffe58a;
+
+    border-radius: 7px;
+
+    color: #171717;
+
+    font-weight: 800;
+    font-size: 0.9rem;
+
+    text-decoration: none;
+
+    letter-spacing: 0.4px;
+
+    box-shadow:
+        0 0 8px rgba(255, 210, 70, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+/* Hover botón */
+
+.vip-featured-button:hover {
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 0 12px rgba(255, 215, 80, 0.65),
+        0 0 25px rgba(255, 190, 30, 0.25);
+
+    filter: brightness(1.08);
+}
+
+
+/* Móvil */
+
+@media (max-width: 600px) {
+
+    .vip-featured-card {
+        max-width: 330px;
+    }
+
+    .vip-featured-badge {
+        top: 8px;
+        left: 8px;
+
+        padding: 5px 8px;
+
+        font-size: 0.68rem;
+    }
+
+    .vip-featured-content {
+        padding: 12px;
+    }
+
+    .vip-featured-content h3 {
+        font-size: 1rem;
+    }
+
+    .vip-featured-info,
+    .vip-featured-language {
+        font-size: 0.8rem;
+    }
+}
+
+
+.games {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.games h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.catalog-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: var(--text-secondary);
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: center;
+}
+
+/* =========================================
+   EFECTO DE IMAGEN AL PASAR EL MOUSE
+   ========================================= */
+
+.vip-featured-image {
+    transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.vip-featured-card:hover .vip-featured-image {
+    transform: scale(1.05);
+    filter: brightness(1.08);
+}
+
+
+/* =========================================
+   REFLEJO DE VIDRIO SOBRE TODA LA TARJETA
+   ========================================= */
+
+.vip-featured-card::after {
+    content: "";
+
+    position: absolute;
+    top: -100%;
+    left: -75%;
+
+    width: 45%;
+    height: 300%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.18),
+        transparent
+    );
+
+    transform: rotate(25deg);
+
+    pointer-events: none;
+
+    opacity: 0;
+}
+
+
+/* El reflejo aparece al pasar el mouse */
+
+.vip-featured-card:hover::after {
+    opacity: 1;
+
+    animation: vipGlassReflection 0.8s ease forwards;
+}
+
+
+@keyframes vipGlassReflection {
+
+    0% {
+        left: -75%;
+    }
+
+    100% {
+        left: 140%;
+    }
+}
+
+/* =====================================================
+CANDADO SE ABRE
+===================================================== */
+.vip-access-button .fa-lock {
+    transition: transform 0.3s ease;
+}
+
+.vip-access-button:hover .fa-lock {
+    transform: rotate(-10deg);
+}
+
 /* =====================================================
    CONTACTO (ESTILO NEÓN ROJIZO / +18)
    ===================================================== */
