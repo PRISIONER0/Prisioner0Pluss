@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-                           
+                                
+    {
+        title: "Nuestra casa",
+        page: "nuestra-casa.html",
+        cover: "nuestra-casa.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },                      
     {
         title: "Cyber paranoia",
         page: "cyber-paranoia.html",
