@@ -63,7 +63,25 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-                      
+                           
+    {
+        title: "Cyber paranoia",
+        page: "cyber-paranoia.html",
+        cover: "cyber-paranoia.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: false,
+    },                         
+    {
+        title: "Darling darling devious",
+        page: "darling-darling-devious.html",
+        cover: "darling-darling-devious.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },                    
     {
         title: "Darling darling devious",
         page: "darling-darling-devious.html",
