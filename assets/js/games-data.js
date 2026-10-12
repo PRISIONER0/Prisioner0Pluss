@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-                                
+    
+    {
+        title: "Overtime",
+        page: "overtime.html",
+        cover: "overtime.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    }, 
     {
         title: "Nuestra casa",
         page: "nuestra-casa.html",
@@ -90,16 +99,7 @@ const games = [
         language: "Español/Portuguese",
         pc: true,
         android: true,
-    },                    
-    {
-        title: "Darling darling devious",
-        page: "darling-darling-devious.html",
-        cover: "darling-darling-devious.webp",
-        featured: false,
-        language: "Español/Portuguese",
-        pc: true,
-        android: true,
-    },              
+    },                                 
     {
         title: "Darling darling dead",
         page: "darling-darling-dead.html",
