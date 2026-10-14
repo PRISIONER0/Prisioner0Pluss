@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-    
+        
+    {
+        title: "He stole my panties, so i stole his virginity",
+        page: "hsmpsishv.html",
+        cover: "hsmpsishv.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    }, 
     {
         title: "Overtime",
         page: "overtime.html",
