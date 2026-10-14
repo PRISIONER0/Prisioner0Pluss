@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-        
+             
+    {
+        title: "You and him",
+        page: "you-and-him.html",
+        cover: "you-and-him.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },   
     {
         title: "He stole my panties, so i stole his virginity",
         page: "hsmpsishv.html",
