@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-             
+                  
+    {
+        title: "Unleashed",
+        page: "unleashed.html",
+        cover: "unleashed.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },          
     {
         title: "You and him",
         page: "you-and-him.html",
