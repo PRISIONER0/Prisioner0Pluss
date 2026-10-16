@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-                  
+                       
+    {
+        title: "Colored gaze",
+        page: "colored-gaze.html",
+        cover: "colored-gaze.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },             
     {
         title: "Unleashed",
         page: "unleashed.html",
