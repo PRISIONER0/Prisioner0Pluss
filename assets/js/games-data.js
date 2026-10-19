@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-                       
+                           
+    {
+        title: "A date with death + DLC +18",
+        page: "a-date-with-death.html",
+        cover: "a-date-with-death.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },                           
     {
         title: "Colored gaze",
         page: "colored-gaze.html",
