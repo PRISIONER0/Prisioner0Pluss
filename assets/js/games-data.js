@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-                           
+                               
+    {
+        title: "Carved in stone",
+        page: "carved-in-stone.html",
+        cover: "carved-in-stone.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },                        
     {
         title: "A date with death + DLC +18",
         page: "a-date-with-death.html",
