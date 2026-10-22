@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-                               
+                                   
+    {
+        title: "Just be patient",
+        page: "just-be-patient.html",
+        cover: "just-be-patient.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },                            
     {
         title: "Carved in stone",
         page: "carved-in-stone.html",
