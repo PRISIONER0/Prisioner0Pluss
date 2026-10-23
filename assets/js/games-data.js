@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-                                   
+                                        
+    {
+        title: "Sweets",
+        page: "sweets.html",
+        cover: "sweets.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },                               
     {
         title: "Just be patient",
         page: "just-be-patient.html",
