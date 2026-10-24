@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-                                        
+                                            
+    {
+        title: "Sundry heart",
+        page: "sundry-heart.html",
+        cover: "sundry-heart.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },                                    
     {
         title: "Sweets",
         page: "sweets.html",
