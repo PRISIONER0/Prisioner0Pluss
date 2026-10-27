@@ -63,7 +63,16 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-                                            
+                                                
+    {
+        title: "The glass coffin",
+        page: "the-glass-coffin.html",
+        cover: "the-glass-coffin.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },                                         
     {
         title: "Sundry heart",
         page: "sundry-heart.html",
