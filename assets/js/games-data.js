@@ -63,7 +63,25 @@ const games = [
     // MÁS JUEGOS (VER MÁS)
     // featured: false
     // ================================
-                                                
+                                                    
+    {
+        title: "Love money",
+        page: "lovemoney.html",
+        cover: "lovemoney.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },  
+    {
+        title: "A date with death + DLC +18 (ARREGLADO)",
+        page: "a-date-with-death.html",
+        cover: "a-date-with-death.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },                                              
     {
         title: "The glass coffin",
         page: "the-glass-coffin.html",
@@ -108,16 +126,7 @@ const games = [
         language: "Español/Portuguese",
         pc: true,
         android: true,
-    },                        
-    {
-        title: "A date with death + DLC +18",
-        page: "a-date-with-death.html",
-        cover: "a-date-with-death.webp",
-        featured: false,
-        language: "Español/Portuguese",
-        pc: true,
-        android: true,
-    },                           
+    },                                                 
     {
         title: "Colored gaze",
         page: "colored-gaze.html",
