@@ -65,6 +65,15 @@ const games = [
     // ================================
                                                     
     {
+        title: "Lunar tears",
+        page: "lunar-tears.html",
+        cover: "lunar-tears.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },                                                      
+    {
         title: "Love money",
         page: "lovemoney.html",
         cover: "lovemoney.webp",
