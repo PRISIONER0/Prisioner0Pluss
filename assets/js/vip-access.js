@@ -167,7 +167,7 @@ async function requestVipDownload(platform) {
         if (platform === "pc") {
 
             window.location.href =
-                "https://github.com/PRISIONER0/ACupofDreams-Espa-ol/releases/download/v1.0/burningred-PRISIONER0.zip";
+                "https://github.com/PRISIONER0/ACupofDreams-Espa-ol/releases/download/v1.0/UN.DRESSME-PRISIONER0.zip";
 
             return;
         }
@@ -179,7 +179,7 @@ async function requestVipDownload(platform) {
         if (platform === "android") {
 
             window.location.href =
-                "https://github.com/PRISIONER0/ACupofDreams-Espa-ol/releases/download/v1.0/burn.prisioner0-1.0-1792453688-release.apk";
+                "https://github.com/PRISIONER0/ACupofDreams-Espa-ol/releases/download/v1.0/undressme.prisioner0-4.0.3-1793499161-release.apk";
 
             return;
         }
