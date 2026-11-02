@@ -74,7 +74,7 @@ const games = [
         android: true,
     }, 
     {
-        title: "burning-red",
+        title: "Burning red",
         page: "burning-red.html",
         cover: "burning-red.webp",
         featured: false,
