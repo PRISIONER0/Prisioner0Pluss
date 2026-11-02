@@ -65,6 +65,15 @@ const games = [
     // ================================
 
     {
+        title: "Comfort and warmth",
+        page: "comfort-and-warmth.html",
+        cover: "comfort-and-warmth.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    }, 
+    {
         title: "burning-red",
         page: "burning-red.html",
         cover: "burning-red.webp",
