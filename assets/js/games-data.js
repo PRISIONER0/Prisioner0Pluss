@@ -8,7 +8,6 @@ const games = [
     // JUEGOS DESTACADOS
     // Máximo 5 con featured: true
     // ================================
-
     {
         title: "The kid at the back nsfw",
         page: "the-kid-at-the-back-nsfw.html",
@@ -18,7 +17,6 @@ const games = [
         pc: true,
         android: true,
     },
-
     {
         title: "Your affliction lester diaz",
         page: "your-affliction-lester-diaz.html",
@@ -28,7 +26,6 @@ const games = [
         pc: true,
         android: true,
     },
-
     {
         title: "14 Days With You + dlc NSFW",
         page: "14dayswithyou+dlc.html",
@@ -38,7 +35,6 @@ const games = [
         pc: true,
         android: true,
     },
-
     {
         title: "Boyfriend to death",
         page: "boyfriend_to_death.html",
@@ -64,6 +60,24 @@ const games = [
     // featured: false
     // ================================
 
+    {
+        title: "Criminally yours ring ring",
+        page: "criminally-yours-ring-ring.html",
+        cover: "criminally-yours-ring-ring.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
+        title: "Criminally yours DLC",
+        page: "criminally-yours.html",
+        cover: "criminally-yours.webp",
+        featured: false,
+        language: "Español",
+        pc: true,
+        android: true,
+    },
     {
         title: "Comfort and warmth",
         page: "comfort-and-warmth.html",
@@ -374,15 +388,6 @@ const games = [
         title: "Boyfriend to death 2 fresh blood",
         page: "boyfriend-to-death2.html",
         cover: "boyfriend-to-death2.webp",
-        featured: false,
-        language: "Español",
-        pc: true,
-        android: true,
-    },
-    {
-        title: "Criminally yours DLC",
-        page: "criminally-yours.html",
-        cover: "criminally-yours.webp",
         featured: false,
         language: "Español",
         pc: true,
