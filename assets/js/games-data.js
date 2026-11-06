@@ -61,6 +61,15 @@ const games = [
     // ================================
 
     {
+        title: "In the ladys embrace",
+        page: "ladysembrace.html",
+        cover: "ladysembrace.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Criminally yours ring ring",
         page: "criminally-yours-ring-ring.html",
         cover: "criminally-yours-ring-ring.webp",
