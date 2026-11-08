@@ -61,9 +61,9 @@ const games = [
     // ================================
 
     {
-        title: "In the ladys embrace",
-        page: "ladysembrace.html",
-        cover: "ladysembrace.webp",
+        title: "Criminally yours mask on",
+        page: "criminally-yours-mask-on.html",
+        cover: "criminally-yours-mask-on.webp",
         featured: false,
         language: "Español/Portuguese",
         pc: true,
@@ -84,6 +84,15 @@ const games = [
         cover: "criminally-yours.webp",
         featured: false,
         language: "Español",
+        pc: true,
+        android: true,
+    },
+    {
+        title: "In the ladys embrace",
+        page: "ladysembrace.html",
+        cover: "ladysembrace.webp",
+        featured: false,
+        language: "Español/Portuguese",
         pc: true,
         android: true,
     },
