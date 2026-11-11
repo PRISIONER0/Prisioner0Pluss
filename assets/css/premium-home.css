@@ -6,6 +6,7 @@
 .premium-home {
     position: relative;
     width: 100%;
+    max-width: 1100px;
     margin: 35px auto;
     padding: 35px 25px;
     box-sizing: border-box;
@@ -620,4 +621,23 @@
     justify-content: center;
     width: 100%;
   }
+}
+
+/* AJUSTE DEL CARTEL PREMIUM EN CELULARES */
+@media (max-width: 768px) {
+
+    .premium-home {
+        width: calc(100% - 30px) !important;
+        max-width: 1100px;
+        margin: 25px auto !important;
+        padding: 25px 18px;
+        box-sizing: border-box;
+    }
+
+    .premium-home-content {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
 }
