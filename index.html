@@ -3,23 +3,23 @@
 
 <head>
 
-    <script>
+<script>
 (function() {
 
     const vipSession =
         localStorage.getItem("prisioner0_vip_session");
 
-    if (vipSession) {
+    const premiumSession =
+        localStorage.getItem("prisioner0_premium_session");
+
+    // Si tiene VIP o Premium, no mostrar publicidad.
+    if (vipSession || premiumSession) {
         return;
     }
 
-    const admaven =
-        document.createElement("script");
+    const admaven = document.createElement("script");
 
-    admaven.setAttribute(
-        "data-cfasync",
-        "false"
-    );
+    admaven.setAttribute("data-cfasync", "false");
 
     admaven.src =
         "//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1723098";
@@ -47,6 +47,7 @@
 
 <link rel="icon" type="image/webp" href="assets/img/favicon.webp">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="assets/css/premium-home.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <!-- lenguaje -->
 <script src="assets/js/language.js"></script>
@@ -105,6 +106,9 @@
                 <a href="contacto.html">Contacto</a>
                 <a href="vip.html" class="nav-btn-plus nav-btn-vip">
                     <i class="fa-solid fa-heart"></i> VIP
+                </a>
+                <a href="premium.html" class="nav-btn-plus premium-nav-btn">
+                    <i class="fa-solid fa-gem"></i> PREMIUM
                 </a>
                 <a href="https://prisioner0.com" target="_blank" rel="noopener noreferrer" class="nav-btn-plus nav-btn-sfw">
                     <i class="fa-solid fa-globe"></i> PRISIONER0
@@ -175,6 +179,63 @@
                     </div>
                 </div>
 
+                <!-- TARJETA PREMIUM COMPLETA CLIQUEABLE -->
+                <a href="premium.html" class="prisionero-card-banner">
+                <span class="badge-exclusivo-premium">EXCLUSIVO PRISIONERO</span>
+                
+                <div class="card-banner-content">
+                    
+                    <!-- LADO IZQUIERDO: DIAMANTE GRANDE Y TEXTOS -->
+                    <div class="card-banner-left">
+                    <div class="diamond-icon floating-diamond">
+                        <svg viewBox="0 0 24 24" width="45" height="45" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="neon-diamond">
+                        <polyline points="6 3 18 3 22 8 12 22 2 8 6 3"></polyline>
+                        <line x1="2" y1="8" x2="22" y2="8"></line>
+                        <line x1="12" y1="22" x2="12" y2="8"></line>
+                        <line x1="6" y1="3" x2="10" y2="8"></line>
+                        <line x1="18" y1="3" x2="14" y2="8"></line>
+                        </svg>
+                    </div>
+
+                    <div class="card-info">
+                        <div class="title-row">
+                        <h2 class="card-title blink-neon">PREMIUM</h2>
+                        <span class="card-desc">— Acceso a una colección exclusiva de novelas visuales</span>
+                        </div>
+                        
+                        <!-- CARACTERÍSTICAS CON ICONOS VECTORIALES PUROS -->
+                        <div class="card-features">
+                        <span class="feature-item">
+                            <span class="feature-icon icon-crown">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 4l3 12h14l3-12-6 7-4-8-4 8-6-7z"></path>
+                                <path d="M4 20h16"></path>
+                            </svg>
+                            </span> VIP: sin anuncios ni acortadores
+                        </span>
+                        <span class="feature-item">
+                            <span class="feature-icon icon-diamond">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 3 18 3 22 8 12 22 2 8 6 3"></polyline>
+                                <line x1="2" y1="8" x2="22" y2="8"></line>
+                                <line x1="12" y1="22" x2="12" y2="8"></line>
+                            </svg>
+                            </span> PREMIUM: VIP + catálogo especial
+                        </span>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- LADO DERECHO: BOTÓN DE ACCIÓN -->
+                    <div class="card-banner-right">
+                    <div class="btn-premium pulse-btn">
+                        Obtener PREMIUM <span class="price-tag">x 4.99$</span> <span class="arrow">→</span>
+                    </div>
+                    </div>
+
+                </div>
+                </a>
+
                 <div class="hero-cta-group">
                     <a href="#juegos" class="btn-main-glow">
                         <i class="fa-solid fa-gamepad"></i> Explorar el catálogo
@@ -235,43 +296,161 @@
             </div>
         </section>
 
-<!-- TARJETA ACCESO ANTICIPADO VIP -->
-<div class="vip-featured-card">
+<!-- ===== PRISIONER0 PREMIUM ===== -->
+<section class="premium-home">
 
-    <div class="vip-featured-badge">
-        👑 ACCESO ANTICIPADO VIP
-    </div>
+    <div class="premium-home-content">
 
-    <img
-        src="assets/img/covers/undress-me.webp"
-        alt="Burning red"
-        class="vip-featured-image"
-    >
+        <div class="premium-home-info">
 
-    <div class="vip-featured-content">
+<span class="premium-home-label">
+    <span class="premium-gem-icon">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="gemTop" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#ffffff"/>
+                    <stop offset="35%" stop-color="#e8baff"/>
+                    <stop offset="100%" stop-color="#a52cff"/>
+                </linearGradient>
 
-        <h3>Undress me</h3>
+                <linearGradient id="gemLeft" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#d98aff"/>
+                    <stop offset="100%" stop-color="#6510b9"/>
+                </linearGradient>
 
-        <div class="vip-featured-info">
-            <span>🖥 PC</span>
-            <span>📱 Android</span>
-            <span>Español • Português</span>
+                <linearGradient id="gemRight" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#f2cfff"/>
+                    <stop offset="100%" stop-color="#8a20e8"/>
+                </linearGradient>
+            </defs>
+
+            <polygon points="50,5 91,35 50,95 9,35"
+                     fill="#a52cff"/>
+
+            <polygon points="9,35 50,5 35,35"
+                     fill="url(#gemTop)"/>
+
+            <polygon points="50,5 91,35 65,35"
+                     fill="#d9a0ff"/>
+
+            <polygon points="35,35 65,35 50,95"
+                     fill="url(#gemRight)"/>
+
+            <polygon points="9,35 35,35 50,95"
+                     fill="url(#gemLeft)"/>
+
+            <polygon points="35,35 50,5 65,35"
+                     fill="#f5dfff"/>
+
+            <path d="M9 35 L91 35 L50 95 Z"
+                  fill="none"
+                  stroke="#f5dfff"
+                  stroke-width="1.5"
+                  opacity="0.8"/>
+        </svg>
+    </span>
+    ACCESO EXCLUSIVO
+</span>
+
+            <h2>
+                PRISIONER0 <span>PREMIUM</span>
+            </h2>
+
+            <p>
+                Historias seleccionadas, juegos completos,
+                DLC y contenido exclusivo en una biblioteca
+                que no encontrarás en el catálogo gratuito.
+            </p>
+
+            <a href="premium.html#premium-catalog" class="premium-home-button">
+                Explorar catálogo PREMIUM
+            </a>
+
         </div>
 
-        <a
-            href="juegos/undress-me.html"
-            class="vip-featured-button"
-        >
-            VER JUEGO
-        </a>
+<div class="premium-home-covers">
+
+    <div class="premium-game-stack">
+
+        <div class="premium-game-card card-one">
+            <div class="premium-game-image">
+                <img src="assets/img/covers/error143.webp" alt="Error143">
+            </div>
+            <div class="premium-game-title">
+                Error143<br>
+                Full Game
+            </div>
+        </div>
+
+        <div class="premium-game-card card-two">
+            <div class="premium-game-image">
+                <img src="assets/img/covers/a-date-with-death.webp" alt="A Date with Death">
+            </div>
+            <div class="premium-game-title">
+                A Date with Death<br>
+                Full Game
+            </div>
+        </div>
+
+        <div class="premium-game-card card-four">
+            <div class="premium-game-image premium-more-image">
+                <span>+</span>
+            </div>
+            <div class="premium-game-title">
+                Más historias...
+            </div>
+        </div>
+
     </div>
+
+    <div class="premium-stack-caption">
+        <span>✦</span> UNA BIBLIOTECA DE HISTORIAS EXCLUSIVAS
+    </div>
+
 </div>
+
+    </div>
+
+</section>
+<!-- ===== FIN PRISIONER0 PREMIUM ===== -->
 
 <section id="juegos" class="games">
     <h2>Juegos</h2>
     <p class="catalog-description">
         Explora todas las traducciones y ports sin censura disponibles para PC y Android.
     </p>
+
+    <!-- TARJETA ACCESO ANTICIPADO VIP -->
+    <div class="vip-featured-card">
+
+        <div class="vip-featured-badge">
+            👑 ACCESO ANTICIPADO VIP
+        </div>
+
+        <img
+            src="assets/img/covers/undress-me.webp"
+            alt="Burning red"
+            class="vip-featured-image"
+        >
+
+        <div class="vip-featured-content">
+
+            <h3>Undress me</h3>
+
+            <div class="vip-featured-info">
+                <span>🖥 PC</span>
+                <span>📱 Android</span>
+                <span>Español • Português</span>
+            </div>
+
+            <a
+                href="juegos/undress-me.html"
+                class="vip-featured-button"
+            >
+                VER JUEGO
+            </a>
+        </div>
+    </div>
 
     <div class="featured-games">
         <div class="section-subtitle">
@@ -414,6 +593,7 @@
     </script>
 
     <script src="assets/js/games-data.js"></script>
+    <script src="assets/js/premium-data.js"></script>
     <script src="assets/js/vip.js"></script>
     <script src="assets/js/vip-ad-control.js"></script>
     <script src="assets/js/index.js"></script>

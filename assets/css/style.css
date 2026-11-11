@@ -222,7 +222,7 @@ a {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 12px 20px;
     display: flex;
@@ -322,6 +322,7 @@ a {
     font-size: 1rem;
 }
 
+
 /* =====================================================
    BOTÓN SFW DEL MENÚ (Tamaño y Estilo Neón Celeste)
    ===================================================== */
@@ -356,6 +357,25 @@ a {
     text-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
 }
 
+/* BOTÓN PREMIUM MORADO NEÓN */
+.nav-links .premium-nav-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 10px 18px !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+
+    background: linear-gradient(135deg, #7e22ce, #a855f7, #6d28d9);
+    color: #fff !important;
+    border: 1px solid rgba(192,132,252,0.7);
+    box-shadow: 0 0 8px rgba(168,85,247,0.7),
+                0 0 18px rgba(126,34,206,0.45);
+}
 /* =====================================================
    RESULTADOS DEL BUSCADOR
    ================================================     */
@@ -2872,31 +2892,95 @@ ANUNCIOS
         max-height: 40px;
     }
 
-    .global-search {
+     /* CONTENEDOR PRINCIPAL */
+    .site-header .nav-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 12px;
+        gap: 9px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* LOGO */
+    .brand-logo img {
+        max-height: 40px;
+    }
+
+    /* BUSCADOR */
+    .games-search-box {
         width: 100%;
         max-width: 100%;
-        margin: 5px 0;
+        margin: 3px 0;
     }
 
-    .global-search input {
+    .games-search-box input {
         width: 100%;
+        box-sizing: border-box;
         font-size: 14px;
-        padding: 8px 12px 8px 35px;
+        padding: 9px 12px 9px 35px;
     }
 
-    .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-        width: 100%;
-        margin-top: 5px;
-    }
+    /* MENÚ: DOS FILAS */
 
-    .nav-links a {
-        font-size: 13px;
-        padding: 6px 10px;
-    }
+/* MENÚ MÓVIL SIMÉTRICO */
+.nav-links {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: center;
+    justify-content: center;
+    gap: 10px 0;
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* PRIMERA FILA: CUATRO ENLACES */
+.nav-links a:nth-child(-n+4) {
+    grid-row: 1;
+    grid-column: span 3;
+    justify-self: stretch;
+    text-align: center;
+    font-size: 13px;
+    padding: 8px 0;
+    white-space: nowrap;
+}
+
+/* SEGUNDA FILA: TRES BOTONES IGUALES */
+.nav-links a:nth-child(n+5) {
+    grid-row: 2;
+    grid-column: span 4;
+    justify-self: stretch;
+    width: 100%;
+    min-width: 0;
+    min-height: 38px;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    padding: 8px 3px;
+    white-space: nowrap;
+}
+
+
+/* BUSCADOR PRINCIPAL DE INDEX EN MÓVILES */
+.global-search {
+    display: flex;
+    width: 100%;
+    max-width: none;
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    margin: 3px 0;
+}
+
+.global-search input {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 10px 12px 10px 40px;
+}
 
 
     /* ---------- 2. SECCIÓN HERO MODERN Y ELEMENTOS INTERNOS ---------- */

@@ -1,0 +1,1575 @@
+
+:root {
+  --premium-bg: #0b0610;
+  --premium-panel: #160c22;
+  --premium-card: #1b0d2b;
+  --premium-purple: #a855f7;
+  --premium-pink: #ec4899;
+  --premium-magenta: #d946ef;
+  --premium-text: #fff;
+  --premium-muted: #c4afd5;
+  --premium-border: #482365;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--premium-bg);
+  color: var(--premium-text);
+  font-family: 'Inter', sans-serif;
+}
+
+/* MENÚ */
+
+.premium-nav-btn {
+  background: linear-gradient(135deg, var(--premium-purple), var(--premium-pink));
+  color: #fff !important;
+  border: 1px solid #ffffff40;
+  box-shadow: 0 0 12px #ec489955;
+  transition: .25s;
+}
+
+.premium-nav-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px #ec489999;
+}
+
+/* ENCABEZADO */
+
+.premium-header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.premium-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.premium-header-gem {
+  font-size: 2.5rem;
+  color: var(--premium-pink);
+  filter: drop-shadow(0 0 12px #ec4899);
+  animation: premiumGemFloat 3s ease-in-out infinite;
+}
+
+.premium-header h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 0 12px #a855f788, 0 0 25px #ec489966;
+}
+
+.premium-header p {
+  color: var(--premium-muted);
+}
+
+/* CONTENEDOR */
+
+.premium-main-window {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* COMPRA Y ACTIVACIÓN */
+
+.premium-actions-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.premium-intro,
+.premium-activation-card,
+.premium-catalog,
+.premium-information {
+  border: 1px solid #ec489977;
+  box-shadow: 0 0 12px #ec489933, 0 10px 30px #0008;
+}
+
+.premium-intro,
+.premium-activation-card {
+  background: var(--premium-panel);
+  border-radius: 16px;
+  padding: 22px 20px;
+  min-width: 0;
+}
+
+.premium-intro {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.premium-description {
+  color: var(--premium-muted);
+  font-size: .9rem;
+  line-height: 1.5;
+  max-width: 400px;
+  margin: 0 auto 15px;
+}
+
+.premium-price {
+  font-size: 1.7rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #a855f788;
+}
+
+.premium-price span {
+  color: var(--premium-muted);
+  font-size: .9rem;
+  font-weight: 400;
+}
+
+.premium-buy-button,
+.premium-code-form button {
+  background: linear-gradient(135deg, #9333ea, #ec4899);
+  color: #fff;
+  border: 1px solid #ffffff40;
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.premium-buy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 15px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 18px #ec489955;
+  animation: buttonPulse 3s ease-in-out infinite;
+}
+
+.premium-buy-button:hover,
+.premium-code-form button:hover {
+  filter: brightness(1.15);
+}
+
+.premium-buy-note {
+  color: var(--premium-muted);
+  font-size: .75rem;
+  margin-top: 10px;
+}
+
+/* ACTIVACIÓN */
+
+.premium-activation-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.premium-activation-heading {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.premium-activation-icon {
+  font-size: 1.6rem;
+  color: var(--premium-purple);
+  filter: drop-shadow(0 0 8px #a855f7);
+}
+
+.premium-activation-heading h2 {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.premium-activation-heading p,
+#premiumActivateForm > p {
+  color: var(--premium-muted);
+  font-size: .85rem;
+}
+
+#premiumActivateForm {
+  text-align: center;
+}
+
+#premiumActivateForm h3 {
+  font-size: .95rem;
+  margin-bottom: 6px;
+}
+
+.premium-code-form {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.premium-code-form input {
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+  background: var(--premium-bg);
+  color: #fff;
+  border: 1px solid var(--premium-border);
+  border-radius: 10px;
+  padding: 11px;
+  outline: none;
+}
+
+.premium-code-form input:focus {
+  border-color: var(--premium-pink);
+  box-shadow: 0 0 10px #ec489955;
+}
+
+.premium-code-form button {
+  border-radius: 10px;
+  padding: 11px 13px;
+  white-space: nowrap;
+}
+
+.premium-message {
+  text-align: center;
+  margin-top: 10px;
+  font-size: .85rem;
+}
+
+
+/* PREMIUM ACTIVADO */
+
+.premium-active-panel {
+  text-align: center;
+  padding: 4px 8px;
+}
+
+.premium-active-icon {
+  font-size: 2rem;
+  color: var(--premium-pink);
+  filter: drop-shadow(0 0 8px #ec4899);
+}
+
+.premium-active-panel h2 {
+  color: #22c55e;
+  font-size: 1.1rem;
+  margin: 4px 0;
+}
+
+.premium-active-text {
+  color: var(--premium-muted);
+  font-size: .8rem;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+
+.premium-status-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.premium-status-info div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 10px;
+  background: var(--premium-bg);
+  border: 1px solid var(--premium-border);
+  border-radius: 10px;
+  text-align: left;
+  min-width: 0;
+}
+
+.premium-status-info i {
+  color: var(--premium-purple);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.premium-status-info span {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.premium-status-info strong {
+  color: var(--premium-muted);
+  font-size: .7rem;
+}
+
+.premium-status-info small {
+  font-size: .8rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.premium-logout-button {
+  background: #ef444422;
+  border: 1px solid #ef444466;
+  color: #f87171;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: .8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.premium-logout-button:hover {
+  background: #ef444444;
+}
+
+@media (max-width: 480px) {
+  .premium-status-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* CATÁLOGO */
+
+.premium-catalog,
+.premium-information {
+  background: var(--premium-panel);
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 1050px;
+  margin: 25px auto 0;
+  box-sizing: border-box;
+}
+
+.premium-catalog-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.premium-catalog-heading h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.premium-catalog-heading p {
+  color: var(--premium-muted);
+}
+
+.premium-featured h3,
+.premium-full-catalog-heading h3,
+.premium-information h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: .5px;
+  margin-bottom: 20px;
+}
+
+/* GRILLAS */
+
+.premium-featured-grid,
+.premium-games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 20px;
+}
+
+/* TARJETAS DE JUEGOS */
+
+.premium-page .game-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(145deg, #241039, #12091d 75%);
+  border: 1px solid #7136a0;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #a855f722, inset 0 0 15px #a855f711;
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+  isolation: isolate;
+}
+
+/* REFLEJO ESPEJO */
+
+.premium-page .game-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 55%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 3;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    #ffffff08 38%,
+    #ffffff55 50%,
+    #ec489933 58%,
+    transparent 75%
+  );
+  transform: rotate(18deg);
+  animation: premiumShine 7s ease-in-out infinite;
+}
+
+.premium-page .game-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--premium-pink);
+  box-shadow: 0 0 18px #ec489966, 0 0 30px #a855f733;
+}
+
+.premium-page .game-card img {
+  display: block;
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+  background: #180e29;
+}
+
+.premium-page .game-card h3 {
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 12px 0;
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.premium-page .game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 8px 12px 12px;
+  gap: 5px;
+}
+
+/* DISPOSITIVOS E IDIOMAS */
+
+.premium-device-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 5px 0;
+}
+
+.premium-info-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #e5d8ef;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.premium-info-item i,
+.premium-language-info i {
+  color: var(--premium-purple);
+  font-size: .95rem;
+}
+
+.premium-language-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 5px 0 10px;
+  color: var(--premium-muted);
+  font-size: .75rem;
+  line-height: 1.5;
+}
+
+.premium-language-info span {
+  text-align: center;
+}
+
+/* BOTÓN VER JUEGO */
+
+.premium-page .game-button {
+  display: block;
+  width: calc(100% - 30px);
+  box-sizing: border-box;
+  margin: 0 15px 15px;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 800;
+  background: linear-gradient(110deg, #9333ea, #ec4899);
+  border: 1px solid #ffffff33;
+  border-radius: 9px;
+  box-shadow: 0 0 12px #ec489944;
+  transition: filter .2s, box-shadow .2s;
+}
+
+.premium-page .game-card:hover .game-button {
+  filter: brightness(1.15);
+  box-shadow: 0 0 18px #ec489988;
+}
+
+/* VER MÁS */
+
+.premium-more-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(135deg, #241039, #12091d);
+  border: 2px dashed #7136a0;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.premium-more-card:hover {
+  border-color: var(--premium-pink);
+  transform: translateY(-4px);
+}
+
+.premium-more-icon {
+  color: var(--premium-purple);
+  font-size: 1.8rem;
+}
+
+.premium-more-card h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.premium-more-card p {
+  margin: 0;
+  color: var(--premium-muted);
+  font-size: .85rem;
+}
+
+.premium-more-card i.fa-arrow-right {
+  color: var(--premium-pink);
+}
+
+/* PAGINACIÓN */
+
+.premium-full-catalog {
+  margin-top: 35px;
+}
+
+.premium-full-catalog-heading {
+  margin-bottom: 20px;
+}
+
+.premium-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.premium-pagination button {
+  padding: 9px 14px;
+  color: #fff;
+  background: var(--premium-bg);
+  border: 1px solid var(--premium-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.premium-pagination button:hover,
+.premium-pagination button.active {
+  background: linear-gradient(135deg, #9333ea, #db2777);
+  border-color: var(--premium-pink);
+  box-shadow: 0 0 12px #ec489955;
+}
+
+.premium-pagination button:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+/* INFORMACIÓN */
+
+.premium-information {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.premium-information h3 {
+  grid-column: 1 / -1;
+}
+
+.premium-information-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 16px;
+  background: var(--premium-bg);
+  border: 1px solid var(--premium-border);
+  border-radius: 12px;
+}
+
+.premium-information-item i {
+  color: var(--premium-pink);
+  font-size: 1.5rem;
+}
+
+.premium-information-item strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.premium-information-item p {
+  color: var(--premium-muted);
+  font-size: .85rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ANIMACIONES */
+
+.blink-neon {
+  animation: neonGlowBlink 2s infinite alternate;
+}
+
+@keyframes premiumShine {
+  0%, 65% {
+    left: -100%;
+  }
+  85%, 100% {
+    left: 150%;
+  }
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px #ec489966;
+  }
+  50% {
+    box-shadow: 0 0 25px #ec4899bb;
+  }
+}
+
+@keyframes premiumGemFloat {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+@keyframes neonGlowBlink {
+  0%, 100% {
+    color: #fff;
+    text-shadow: 0 0 8px #ec489988;
+  }
+  50% {
+    color: #d8b4fe;
+    text-shadow: 0 0 15px #a855f7, 0 0 25px #ec4899;
+  }
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+  .premium-main-window {
+    padding: 15px;
+  }
+
+  .premium-featured-grid,
+  .premium-games-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* MÓVILES */
+
+@media (max-width: 600px) {
+  .premium-header {
+    padding: 20px 10px 15px;
+  }
+
+  .premium-page .premium-title-container {
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .premium-page .premium-header-gem {
+    font-size: 24px;
+  }
+
+  .premium-page .premium-header h1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .premium-main-window {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .premium-actions-row {
+    gap: 10px;
+  }
+
+  .premium-intro,
+  .premium-activation-card {
+    padding: 14px 10px;
+    border-radius: 13px;
+  }
+
+  .premium-description {
+    font-size: .75rem;
+  }
+
+  .premium-price {
+    font-size: 1.3rem;
+  }
+
+  .premium-price span {
+    display: block;
+    font-size: .7rem;
+  }
+
+  .premium-buy-button {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    font-size: .72rem;
+  }
+
+  .premium-buy-note {
+    font-size: .65rem;
+  }
+
+  .premium-activation-heading h2 {
+    font-size: .9rem;
+  }
+
+  .premium-activation-heading p,
+  #premiumActivateForm > p {
+    font-size: .7rem;
+  }
+
+  #premiumActivateForm h3 {
+    font-size: .8rem;
+  }
+
+  .premium-code-form {
+    flex-direction: column;
+  }
+
+  .premium-code-form input,
+  .premium-code-form button {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: .72rem;
+  }
+
+  .premium-catalog,
+  .premium-information {
+    padding: 18px 12px;
+  }
+
+  .premium-featured-grid,
+  .premium-games-grid {
+    gap: 12px;
+  }
+
+  .premium-page .game-card img {
+    height: 125px;
+  }
+
+  .premium-page .game-card h3 {
+    font-size: .85rem;
+  }
+
+  .premium-info-item {
+    font-size: .7rem;
+  }
+
+  .premium-language-info {
+    font-size: .68rem;
+  }
+
+  .premium-page .game-button {
+    width: calc(100% - 20px);
+    margin: 0 10px 10px;
+    padding: 8px;
+    font-size: .75rem;
+  }
+
+  .premium-more-card {
+    min-height: 180px;
+    padding: 12px;
+  }
+
+  .premium-status-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 350px) {
+  .premium-actions-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* =====================================================
+   PRISIONER0 PREMIUM
+   IDENTIDAD: VIOLETA + ROSA FLÚOR + NEÓN GAMER
+===================================================== */
+
+.premium-game-page {
+    --premium-violet: #9b4dff;
+    --premium-violet-dark: #5b16a8;
+    --premium-pink: #ff00c8;
+    --premium-pink-light: #ff4de1;
+    --premium-glow: rgba(255, 0, 200, 0.35);
+    --premium-violet-glow: rgba(155, 77, 255, 0.35);
+}
+
+/* =====================================================
+   CONTENEDOR PRINCIPAL
+===================================================== */
+
+.premium-game-page.game-page {
+    max-width: 1350px;
+    margin: 30px auto;
+    padding: 0 25px;
+}
+
+.premium-game-page .game-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    background: linear-gradient(
+        145deg,
+        #1b102b 0%,
+        #15101f 45%,
+        #0d0d12 100%
+    );
+
+    border: 1px solid rgba(155, 77, 255, 0.35);
+    border-radius: 25px;
+    padding: 40px;
+
+    box-shadow:
+        0 0 35px rgba(155, 77, 255, 0.16),
+        0 0 55px rgba(255, 0, 200, 0.08),
+        inset 0 0 25px rgba(155, 77, 255, 0.05);
+}
+
+/* =====================================================
+   PORTADA DEL JUEGO
+===================================================== */
+
+.premium-game-page .game-cover {
+    flex: 0 0 320px;
+    height: 450px;
+    overflow: hidden;
+
+    border-radius: 18px;
+    border: 2px solid rgba(255, 0, 200, 0.45);
+
+    box-shadow:
+        0 0 18px rgba(255, 0, 200, 0.2),
+        0 0 28px rgba(155, 77, 255, 0.16);
+}
+
+.premium-game-page .game-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+    transition: transform 0.4s ease;
+}
+
+.premium-game-page .game-cover:hover img {
+    transform: scale(1.03);
+}
+
+/* =====================================================
+   INFORMACIÓN DEL JUEGO
+===================================================== */
+
+.premium-game-page .game-details {
+    flex: 1;
+    min-width: 280px;
+}
+
+.premium-game-page .game-details h1 {
+    display: block;
+    width: 100%;
+
+    font-size: 40px;
+    font-weight: 800;
+    color: #ffffff;
+
+    margin: 0 0 15px;
+    letter-spacing: 0.5px;
+
+    text-shadow:
+        0 0 10px rgba(155, 77, 255, 0.6),
+        0 0 22px rgba(255, 0, 200, 0.35);
+}
+
+/* =====================================================
+   PLATAFORMAS E IDIOMAS
+===================================================== */
+
+.premium-game-page .game-platforms {
+    color: var(--premium-pink);
+    font-size: 18px;
+    font-weight: bold;
+
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    text-shadow:
+        0 0 8px rgba(255, 0, 200, 0.45),
+        0 0 16px rgba(155, 77, 255, 0.25);
+}
+
+.premium-game-page .game-platforms i {
+    color: var(--premium-violet);
+    filter:
+        drop-shadow(0 0 5px rgba(155, 77, 255, 0.65));
+}
+
+/* =====================================================
+   DESCRIPCIÓN
+===================================================== */
+
+.premium-game-page .game-description {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #d5cbdc;
+    margin-bottom: 30px;
+}
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+.premium-game-page .game-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.premium-game-page .original-btn,
+.premium-game-page .download-btn {
+    color: white;
+    text-decoration: none;
+
+    padding: 16px 20px;
+    border-radius: 14px;
+
+    text-align: center;
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    font-size: 16px;
+}
+
+/* Botón del juego original */
+
+.premium-game-page .original-btn {
+    background: #21172d;
+    border: 1px solid rgba(155, 77, 255, 0.35);
+}
+
+.premium-game-page .original-btn:hover {
+    background: #30203f;
+    border-color: var(--premium-violet);
+    box-shadow: 0 0 15px rgba(155, 77, 255, 0.25);
+    transform: translateY(-3px);
+}
+
+/* Botones de descarga */
+
+.premium-game-page .download-btn {
+    background: linear-gradient(
+        120deg,
+        #761bd1 0%,
+        #a000b8 50%,
+        #ed00a8 100%
+    );
+
+    border: 1px solid rgba(255, 0, 200, 0.65);
+
+    box-shadow:
+        0 0 15px rgba(155, 77, 255, 0.3),
+        0 0 22px rgba(255, 0, 200, 0.16);
+}
+
+.premium-game-page .download-btn:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(
+        120deg,
+        #923cff 0%,
+        #c000d9 50%,
+        #ff22c9 100%
+    );
+
+    box-shadow:
+        0 0 20px rgba(155, 77, 255, 0.5),
+        0 0 30px rgba(255, 0, 200, 0.4);
+}
+
+/* =====================================================
+   CAPTURAS
+===================================================== */
+
+.premium-game-page .screenshots {
+    width: 100%;
+    flex-basis: 100%;
+    margin-top: 35px;
+}
+
+.premium-game-page .screenshots h2 {
+    color: #ffffff;
+    text-shadow:
+        0 0 10px rgba(155, 77, 255, 0.55),
+        0 0 18px rgba(255, 0, 200, 0.3);
+
+    border-bottom: 1px solid rgba(255, 0, 200, 0.3);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.premium-game-page .screenshots-grid img {
+    border: 1px solid rgba(155, 77, 255, 0.4);
+    box-shadow: 0 0 12px rgba(155, 77, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.premium-game-page .screenshots-grid img:hover {
+    border-color: var(--premium-pink);
+    box-shadow:
+        0 0 15px rgba(255, 0, 200, 0.35),
+        0 0 22px rgba(155, 77, 255, 0.25);
+}
+
+/* =====================================================
+   BOTÓN PREMIUM DEL MENÚ
+===================================================== */
+
+.premium-nav-btn {
+    background: linear-gradient(
+        120deg,
+        #7624d5,
+        #b000c9,
+        #ff00b8
+    ) !important;
+
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 0, 200, 0.65);
+
+    box-shadow:
+        0 0 12px rgba(155, 77, 255, 0.35),
+        0 0 18px rgba(255, 0, 200, 0.2);
+
+    transition: all 0.3s ease;
+}
+
+.premium-nav-btn:hover {
+    background: linear-gradient(
+        120deg,
+        #923cff,
+        #d000e8,
+        #ff35ce
+    ) !important;
+
+    box-shadow:
+        0 0 18px rgba(155, 77, 255, 0.55),
+        0 0 25px rgba(255, 0, 200, 0.4);
+
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .premium-game-page.game-page {
+        margin: 18px auto;
+        padding: 0 12px;
+    }
+
+    .premium-game-page .game-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 22px 16px;
+        border-radius: 18px;
+    }
+
+    .premium-game-page .game-cover {
+        flex: none;
+        width: 100%;
+        max-width: 320px;
+        height: 420px;
+    }
+
+    .premium-game-page .game-details {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .premium-game-page .game-details h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .premium-game-page .game-platforms {
+        justify-content: center;
+        font-size: 15px;
+        gap: 8px;
+    }
+
+    .premium-game-page .game-description {
+        font-size: 15px;
+    }
+
+    .premium-game-page .original-btn,
+    .premium-game-page .download-btn {
+        font-size: 14px;
+        padding: 14px 12px;
+    }
+
+    .premium-game-page .screenshots {
+        margin-top: 15px;
+    }
+}
+
+/* ==========================================
+   AVISO PARA MIEMBROS PREMIUM
+========================================== */
+
+.premium-support-notice {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 25px 0;
+    padding: 20px 22px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(100, 35, 160, 0.16),
+        rgba(255, 0, 170, 0.08)
+    );
+
+    border: 1px solid rgba(180, 75, 255, 0.55);
+    border-left: 4px solid #b34dff;
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 12px rgba(160, 60, 255, 0.12),
+        inset 0 0 15px rgba(160, 60, 255, 0.04);
+}
+
+.premium-support-notice h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0 0 14px;
+
+    color: #d99aff;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.premium-support-notice h3 i {
+    color: #ff45d4;
+    text-shadow: 0 0 10px rgba(255, 45, 210, 0.65);
+}
+
+.premium-support-notice p {
+    margin: 10px 0 0;
+
+    color: #ded5e8;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.premium-support-notice p:last-child {
+    color: #e9baff;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   BOTONES DE DESCARGA PREMIUM
+========================================== */
+
+.premium-download-btn {
+    position: relative;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.premium-download-btn .premium-lock-icon {
+    margin-left: 8px;
+    color: #e6a3ff;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   FONDO DEL MODAL
+========================================== */
+
+.premium-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    background: rgba(5, 2, 12, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+
+/* Modal visible */
+
+.premium-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* ==========================================
+   VENTANA DEL MODAL
+========================================== */
+
+.premium-modal {
+    position: relative;
+
+    width: 100%;
+    max-width: 440px;
+    box-sizing: border-box;
+
+    padding: 38px 30px 30px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        #1b1028,
+        #100b19 65%,
+        #1c0d24
+    );
+
+    border: 1px solid rgba(190, 80, 255, 0.65);
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 20px rgba(160, 50, 255, 0.25),
+        0 0 50px rgba(255, 0, 190, 0.12);
+
+    transform: translateY(20px) scale(0.96);
+
+    transition: transform 0.25s ease;
+}
+
+
+/* Animación de entrada */
+
+.premium-modal-overlay.active .premium-modal {
+    transform: translateY(0) scale(1);
+}
+
+
+/* ==========================================
+   BOTÓN CERRAR
+========================================== */
+
+.premium-modal-close {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #c9b7d8;
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.premium-modal-close:hover {
+    color: #ffffff;
+    background: #a52bda;
+    border-color: #d65cff;
+
+    box-shadow: 0 0 12px rgba(200, 70, 255, 0.5);
+}
+
+
+/* ==========================================
+   ICONO PREMIUM
+========================================== */
+
+.premium-modal-icon {
+    width: 76px;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    background: rgba(180, 65, 255, 0.12);
+
+    border: 1px solid rgba(210, 100, 255, 0.55);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 18px rgba(175, 55, 255, 0.25),
+        inset 0 0 15px rgba(175, 55, 255, 0.12);
+}
+
+.premium-modal-icon i {
+    color: #e18aff;
+    font-size: 34px;
+
+    text-shadow:
+        0 0 10px rgba(220, 100, 255, 0.8),
+        0 0 22px rgba(220, 100, 255, 0.45);
+}
+
+
+/* ==========================================
+   TEXTO DEL MODAL
+========================================== */
+
+.premium-modal h2 {
+    margin: 0 0 18px;
+
+    color: #e4a0ff;
+    font-size: 25px;
+    font-weight: 800;
+
+    text-shadow: 0 0 12px rgba(190, 75, 255, 0.3);
+}
+
+.premium-modal p {
+    margin: 10px 0;
+
+    color: #d7ccdf;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   BOTÓN PRINCIPAL
+========================================== */
+
+.premium-modal-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    margin-top: 25px;
+    padding: 14px 18px;
+
+    color: #ffffff;
+    background: linear-gradient(
+        110deg,
+        #9239df,
+        #d52bbd
+    );
+
+    border: 1px solid rgba(255, 150, 255, 0.45);
+    border-radius: 9px;
+
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+
+    box-shadow:
+        0 0 15px rgba(170, 50, 230, 0.25);
+
+    transition: 0.25s ease;
+}
+
+.premium-modal-button:hover {
+    color: #ffffff;
+
+    background: linear-gradient(
+        110deg,
+        #aa45f5,
+        #f02bcf
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 22px rgba(205, 65, 255, 0.45);
+}
+
+
+/* ==========================================
+   BOTÓN SECUNDARIO
+========================================== */
+
+.premium-modal-secondary {
+    display: block;
+
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+
+    color: #bcaacb;
+    background: transparent;
+
+    border: 1px solid rgba(190, 160, 210, 0.2);
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.premium-modal-secondary:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(200, 100, 255, 0.5);
+}
+
+
+/* ==========================================
+   ADAPTACIÓN PARA CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+
+    .premium-support-notice {
+        margin: 20px 0;
+        padding: 17px;
+    }
+
+    .premium-support-notice h3 {
+        font-size: 15px;
+    }
+
+    .premium-support-notice p {
+        font-size: 13px;
+    }
+
+    .premium-modal {
+        max-width: 100%;
+        padding: 35px 22px 24px;
+    }
+
+    .premium-modal h2 {
+        font-size: 21px;
+    }
+
+    .premium-modal p {
+        font-size: 13px;
+    }
+
+    .premium-modal-icon {
+        width: 66px;
+        height: 66px;
+    }
+
+    .premium-modal-icon i {
+        font-size: 29px;
+    }
+
+}

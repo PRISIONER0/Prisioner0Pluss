@@ -1,66 +1,92 @@
-// ============================================
-// PRISIONER0 VIP ACCESS
-// ============================================
+
+/* ============================================
+   PRISIONER0 VIP + PREMIUM ACCESS
+============================================ */
 
 const VIP_ACCESS_API =
     "https://prisioner0-vip-api.javiieergutierrez01.workers.dev";
 
+const PREMIUM_ACCESS_API =
+    "https://prisioner0-premium-api.javiieergutierrez01.workers.dev";
 
-// ============================================
-// COMPROBAR SESIÓN VIP
-// ============================================
 
-async function checkVipAccess() {
+/* ============================================
+   COMPROBAR UNA SESIÓN
+============================================ */
 
-    const sessionToken =
-        localStorage.getItem("prisioner0_vip_session");
+async function checkAccess(api, token, type) {
 
-    // No hay sesión
-    if (!sessionToken) {
-        showVipAccessLocked();
-        return false;
-    }
+    if (!token) return false;
 
     try {
 
-        const response = await fetch(`${VIP_ACCESS_API}/check-session`, {
+        const response = await fetch(`${api}/check-session`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                session_token: sessionToken
+                session_token: token
             })
         });
 
+        if (!response.ok) return false;
+
         const data = await response.json();
 
-        if (data.ok === true && data.vip === true) {
-
-            showVipAccessUnlocked();
-            return true;
-
+        if (type === "vip") {
+            return data.ok === true && data.vip === true;
         }
 
-        // Sesión inválida
-        showVipAccessLocked();
+        if (type === "premium") {
+            return data.ok === true && data.premium === true;
+        }
 
         return false;
 
     } catch (error) {
 
-        console.error("Error comprobando acceso VIP:", error);
-
-        showVipAccessLocked();
-
+        console.error(`Error comprobando sesión ${type}:`, error);
         return false;
     }
 }
 
 
-// ============================================
-// ESTADO: NO VIP
-// ============================================
+/* ============================================
+   COMPROBAR ACCESO VIP O PREMIUM
+============================================ */
+
+async function checkVipAccess() {
+
+    const vipToken =
+        localStorage.getItem("prisioner0_vip_session");
+
+    const premiumToken =
+        localStorage.getItem("prisioner0_premium_session");
+
+    const [vipActive, premiumActive] = await Promise.all([
+
+        checkAccess(VIP_ACCESS_API, vipToken, "vip"),
+
+        checkAccess(PREMIUM_ACCESS_API, premiumToken, "premium")
+
+    ]);
+
+    if (vipActive || premiumActive) {
+
+        showVipAccessUnlocked();
+        return true;
+
+    }
+
+    showVipAccessLocked();
+    return false;
+}
+
+
+/* ============================================
+   ESTADO: SIN ACCESO
+============================================ */
 
 function showVipAccessLocked() {
 
@@ -72,15 +98,15 @@ function showVipAccessLocked() {
     container.innerHTML = `
         <a href="../vip.html" class="download-btn">
             <i class="fa-solid fa-lock"></i>
-            Obtener acceso VIP
+            Obtener acceso VIP o Premium
         </a>
     `;
 }
 
 
-// ============================================
-// ESTADO: VIP ACTIVADO
-// ============================================
+/* ============================================
+   ESTADO: VIP O PREMIUM ACTIVADO
+============================================ */
 
 function showVipAccessUnlocked() {
 
@@ -90,6 +116,7 @@ function showVipAccessUnlocked() {
     if (!container) return;
 
     container.innerHTML = `
+
         <a href="#"
            class="download-btn vip-access-download"
            onclick="requestVipDownload('pc'); return false;">
@@ -97,11 +124,11 @@ function showVipAccessUnlocked() {
             <i class="fa-solid fa-desktop"></i>
 
             <span class="vip-flags">
-                <img src="https://flagcdn.com/20x15/es.png" alt="Español">
-                <img src="https://flagcdn.com/20x15/br.png" alt="Português">
+                <img src="https://flagcdn.com/20x15/es.png"
+                     alt="Español">
             </span>
 
-            Descargar Traduccion (PC)
+            Descargar Traducción (PC)
 
         </a>
 
@@ -112,96 +139,91 @@ function showVipAccessUnlocked() {
             <i class="fa-solid fa-mobile-screen-button"></i>
 
             <span class="vip-flags">
-                <img src="https://flagcdn.com/20x15/es.png" alt="Español">
-                <img src="https://flagcdn.com/20x15/br.png" alt="Português">
+                <img src="https://flagcdn.com/20x15/es.png"
+                     alt="Español">
             </span>
 
             Descargar Juego (Android)
 
         </a>
+
     `;
 }
 
 
-// ============================================
-// SOLICITAR DESCARGA VIP
-// ============================================
+/* ============================================
+   SOLICITAR DESCARGA
+============================================ */
 
 async function requestVipDownload(platform) {
 
-    const sessionToken =
+    const vipToken =
         localStorage.getItem("prisioner0_vip_session");
 
-    if (!sessionToken) {
-        alert("Necesitas tener una suscripción VIP activa.");
-        return;
-    }
+    const premiumToken =
+        localStorage.getItem("prisioner0_premium_session");
 
     try {
 
-        // Comprobar que la sesión VIP sigue activa
-        const response = await fetch(
-            `${VIP_ACCESS_API}/check-session`,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    session_token: sessionToken
-                })
-            }
-        );
+        /* Comprobar ambas sesiones */
 
-        const data = await response.json();
+        const [vipActive, premiumActive] = await Promise.all([
 
-        if (!data.ok || data.vip !== true) {
-            alert("Tu sesión VIP no está activa.");
+            checkAccess(VIP_ACCESS_API, vipToken, "vip"),
+
+            checkAccess(PREMIUM_ACCESS_API, premiumToken, "premium")
+
+        ]);
+
+        if (!vipActive && !premiumActive) {
+
+            alert("Tu acceso VIP o Premium no está activo.");
+
+            showVipAccessLocked();
+
             return;
         }
 
-        // =========================================
-        // DESCARGA PC
-        // =========================================
+
+        /* =====================================
+           DESCARGA PC
+        ===================================== */
 
         if (platform === "pc") {
 
             window.location.href =
-                "https://github.com/PRISIONER0/ACupofDreams-Espa-ol/releases/download/v1.0/UN.DRESSME-PRISIONER0.zip";
+                "https://github.com/PRISIONER0/ACupofDreams-Espa-ol/releases/download/v1.0/PRISIONER0_Bloody.Painter.Dating.Sim.DLC.zip";
 
             return;
         }
 
-        // =========================================
-        // DESCARGA ANDROID
-        // =========================================
+
+        /* =====================================
+           DESCARGA ANDROID
+        ===================================== */
 
         if (platform === "android") {
 
             window.location.href =
-                "https://github.com/PRISIONER0/ACupofDreams-Espa-ol/releases/download/v1.0/undressme.prisioner0-4.0.3-1793499161-release.apk";
+                "https://github.com/PRISIONER0/ACupofDreams-Espa-ol/releases/download/v1.0/PRISIONER0_Bloody.Painter.Dating.Sim.DLC.apk";
 
             return;
         }
 
     } catch (error) {
 
-        console.error(
-            "Error comprobando acceso VIP:",
-            error
-        );
+        console.error("Error comprobando acceso:", error);
 
         alert(
-            "No se pudo comprobar tu acceso VIP. " +
-            "Inténtalo nuevamente."
+            "No se pudo comprobar tu acceso. Inténtalo nuevamente."
         );
     }
 }
 
 
-// ============================================
-// INICIAR
-// ============================================
+/* ============================================
+   INICIAR
+============================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -209,14 +231,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-// *============================================*
-// *BLOQUEAR MENÚ DERECHO EN BOTONES VIP*
-// *============================================*
+
+/* ============================================
+   BLOQUEAR MENÚ DERECHO EN BOTONES
+============================================ */
 
 document.addEventListener("contextmenu", function(event) {
 
     if (event.target.closest(".vip-access-download")) {
+
         event.preventDefault();
+
     }
 
 });

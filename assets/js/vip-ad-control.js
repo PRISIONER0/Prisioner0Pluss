@@ -1,19 +1,25 @@
-// *=====================================================*
-// *PRISIONER0 VIP*
-// *CONTROL DE PUBLICIDAD*
-// *=====================================================*
+
+/* =====================================================
+   PRISIONER0 VIP + PREMIUM
+   CONTROL DE PUBLICIDAD
+   VIP conserva su funcionamiento original.
+   PREMIUM se comprueba de forma independiente.
+===================================================== */
+
+const PREMIUM_AD_API =
+    "https://prisioner0-premium-api.javiieergutierrez01.workers.dev";
 
 document.addEventListener("DOMContentLoaded", async function () {
+
+    /* =================================================
+       COMPROBAR SESIÓN VIP (ORIGINAL)
+    ================================================= */
 
     const sessionToken = localStorage.getItem(
         "prisioner0_vip_session"
     );
 
     let vipActivo = false;
-
-    // *=================================================*
-    // *COMPROBAR SESIÓN VIP*
-    // *=================================================*
 
     if (sessionToken) {
 
@@ -23,11 +29,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 `${VIP_API}/check-session`,
                 {
                     method: "POST",
-
                     headers: {
                         "Content-Type": "application/json"
                     },
-
                     body: JSON.stringify({
                         session_token: sessionToken
                     })
@@ -46,133 +50,152 @@ document.addEventListener("DOMContentLoaded", async function () {
                 "Error comprobando VIP para publicidad:",
                 error
             );
+
+        }
+    }
+
+    console.log("VIP activo - publicidad:", vipActivo);
+
+    /* =================================================
+       VIP ACTIVO → NO CARGAR PUBLICIDAD
+    ================================================= */
+
+    if (vipActivo) {
+
+        document
+            .querySelectorAll(".ad-container")
+            .forEach(ad => ad.remove());
+
+        return;
+    }
+
+    /* =================================================
+       COMPROBAR SESIÓN PREMIUM (INDEPENDIENTE)
+    ================================================= */
+
+    const premiumToken = localStorage.getItem(
+        "prisioner0_premium_session"
+    );
+
+    let premiumActivo = false;
+
+    if (premiumToken) {
+
+        try {
+
+            const response = await fetch(
+                `${PREMIUM_AD_API}/check-session`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        session_token: premiumToken
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            premiumActivo =
+                data.ok === true &&
+                data.premium === true;
+
+        } catch (error) {
+
+            console.error(
+                "Error comprobando PREMIUM para publicidad:",
+                error
+            );
+
+            // Si hay una sesión PREMIUM guardada pero
+            // el servidor no responde, evitamos mostrar
+            // anuncios hasta poder comprobarla.
+            document
+                .querySelectorAll(".ad-container")
+                .forEach(ad => ad.remove());
+
+            return;
         }
     }
 
     console.log(
-        "VIP activo - publicidad:",
-        vipActivo
+        "PREMIUM activo - publicidad:",
+        premiumActivo
     );
 
+    /* =================================================
+       PREMIUM ACTIVO → NO CARGAR PUBLICIDAD
+    ================================================= */
 
-    // *=================================================*
-    // *VIP → NO CARGAR PUBLICIDAD*
-    // *=================================================*
+    if (premiumActivo) {
 
-    if (vipActivo) {
+        document
+            .querySelectorAll(".ad-container")
+            .forEach(ad => ad.remove());
 
-        console.log(
-            "PRISIONER0 VIP: publicidad bloqueada."
+        return;
+    }
+
+    /* =================================================
+       USUARIO NORMAL → CARGAR PUBLICIDAD
+    ================================================= */
+
+    if (
+        typeof aclib === "undefined" ||
+        typeof aclib.runBanner !== "function"
+    ) {
+
+        console.error(
+            "La publicidad no está disponible."
         );
 
         return;
     }
 
-
-    // *=================================================*
-    // *USUARIO NORMAL → CARGAR PUBLICIDAD*
-    // *=================================================*
-
-
-    // *=================================================*
-    // *BANNER PC SUPERIOR - EXOCLICK*
-    // *=================================================*
+    /* BANNER PC SUPERIOR */
 
     const topDesktop =
-        document.getElementById("exoTop");
+        document.getElementById("adTop");
 
     if (topDesktop) {
-
-        const ad = document.createElement("ins");
-
-        ad.className = "eas6a97888e2";
-        ad.setAttribute("data-zoneid", "6029778");
-
-        topDesktop.appendChild(ad);
+        aclib.runBanner({
+            zoneId: "12031562"
+        });
     }
 
+    /* BANNER PC INFERIOR */
 
-    // *=================================================*
-    // *BANNER MÓVIL SUPERIOR - EXOCLICK*
-    // *=================================================*
+    const bottomDesktop =
+        document.getElementById("adBottom");
+
+    if (bottomDesktop) {
+        aclib.runBanner({
+            zoneId: "12031562"
+        });
+    }
+
+    /* BANNER MÓVIL SUPERIOR */
 
     const topMobile =
-        document.getElementById("exoTopMobile");
+        document.getElementById("adTopMobile");
 
     if (topMobile) {
-
-        const ad = document.createElement("ins");
-
-        ad.className = "eas6a97888e10";
-        ad.setAttribute("data-zoneid", "6033958");
-
-        topMobile.appendChild(ad);
-    }
-
-
-    // *=================================================*
-    // *BANNER ADHESIVO - EXOCLICK*
-    // *=================================================*
-
-    const stickyContainer =
-        document.getElementById("exoStickyContainer");
-
-    if (stickyContainer) {
-
-        const ad = document.createElement("ins");
-
-        ad.id = "exoSticky";
-        ad.className = "eas6a97888e17";
-        ad.setAttribute("data-zoneid", "6029832");
-
-        stickyContainer.appendChild(ad);
-    }
-
-
-    // *=================================================*
-    // *CARGAR EXOCLICK*
-    // *=================================================*
-
-    const exoScript =
-        document.createElement("script");
-
-    exoScript.async = true;
-
-    exoScript.type =
-        "application/javascript";
-
-    exoScript.src =
-        "https://a.magsrv.com/ad-provider.js";
-
-    exoScript.onload = function () {
-
-        window.AdProvider =
-            window.AdProvider || [];
-
-        window.AdProvider.push({
-            "serve": {}
+        aclib.runBanner({
+            zoneId: "12031670"
         });
-    };
+    }
 
-    document.head.appendChild(exoScript);
+    /* BANNER MÓVIL INFERIOR */
 
+    const bottomMobile =
+        document.getElementById("adBottomMobile");
 
-    // *=================================================*
-    // *CARGAR POPUNDER SOLO PARA NO VIP*
-    // *=================================================*
-
-    const popunderScript =
-        document.createElement("script");
-
-    popunderScript.type =
-        "application/javascript";
-
-    popunderScript.src =
-        "assets/js/exo-popunder.js";
-
-    document.body.appendChild(
-        popunderScript
-    );
-
+    if (bottomMobile) {
+        aclib.runBanner({
+            zoneId: "12031670"
+        });
+    }
 
 });

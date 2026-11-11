@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PRISIONER0 PREMIUM</title>
+
+    <meta name="description"
+          content="PRISIONER0 PREMIUM: accede a una colección exclusiva de novelas visuales completas, juegos especiales y contenido adicional.">
+
+    <meta name="keywords"
+          content="Visual Novels, Traducciones, Español, PRISIONER0, PREMIUM, PC, Android">
+
+    <meta name="author" content="PRISIONER0">
+
+    <meta property="og:title" content="PRISIONER0 PREMIUM">
+    <meta property="og:description"
+          content="Accede al catálogo exclusivo de PRISIONER0 PREMIUM durante tu membresía.">
+    <meta property="og:image"
+          content="https://prisioner0.com/assets/img/prisioner0-logo.webp">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/webp" href="assets/img/favicon.webp">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/premium.css">
+
+    <!-- GOOGLE ANALYTICS -->
+    <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-Z73RW5F2N1"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-Z73RW5F2N1');
+    </script>
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- BARRA DE NAVEGACIÓN -->
+    <!-- ========================================= -->
+
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <img src="assets/img/logo.webp" alt="PRISIONER0+ Logo">
+                </a>
+            </div>
+            
+            <div class="global-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Buscar entre novelas visuales sin censura...">
+            </div>
+
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#juegos">Catálogo</a>
+                <a href="acerca.html">Acerca de</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="vip.html" class="nav-btn-plus nav-btn-vip">
+                    <i class="fa-solid fa-heart"></i> VIP
+                </a>
+                <a href="premium.html" class="nav-btn-plus premium-nav-btn">
+                    <i class="fa-solid fa-gem"></i> PREMIUM
+                </a>
+                <a href="https://prisioner0.com" target="_blank" rel="noopener noreferrer" class="nav-btn-plus nav-btn-sfw">
+                    <i class="fa-solid fa-globe"></i> PRISIONER0
+                </a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="premium-page">
+
+            <!-- ========================================= -->
+            <!-- ENCABEZADO PREMIUM -->
+            <!-- ========================================= -->
+
+            <div class="premium-header">
+
+                <div class="premium-title-container">
+
+                    <div class="premium-header-gem">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+
+                    <h1>PRISIONER0 PREMIUM</h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================================= -->
+            <!-- VENTANA PRINCIPAL PREMIUM -->
+            <!-- ========================================= -->
+
+            <div class="premium-main-window">
+
+                <!-- ========================================= -->
+                <!-- COMPRA Y ACTIVACIÓN -->
+                <!-- ========================================= -->
+
+                <div class="premium-actions-row">
+
+                    <!-- EXPLICACIÓN Y COMPRA -->
+
+                    <section class="premium-intro">
+
+                        <p class="premium-description">
+                            Todos los beneficios VIP + acceso a un catálogo exclusivo de juegos.
+                        </p>
+
+                        <div class="premium-price">
+                            US$4.99 <span>/ 30 días</span>
+                        </div>
+
+                        <a
+                            href="https://ko-fi.com/s/b0872f607f"
+                            class="premium-buy-button"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa-solid fa-gem"></i>
+                            OBTENER PREMIUM
+
+                        </a>
+
+                        <p class="premium-buy-note">
+                            Acceso durante 30 días. Renovación mediante una nueva compra.
+                        </p>
+
+                    </section>
+
+
+                    <!-- ACTIVACIÓN Y ESTADO PREMIUM -->
+
+                    <section class="premium-activation-card">
+
+                        <div class="premium-activation-heading" id="premiumActivationHeading">
+
+                            <div class="premium-activation-icon">
+                                <i class="fa-solid fa-key"></i>
+                            </div>
+
+                            <h2>Activar PREMIUM</h2>
+
+                            <p>
+                                ¿Ya tenés tu código? Introducilo para activar tu acceso.
+                            </p>
+
+                        </div>
+
+
+                        <!-- PANEL PREMIUM ACTIVO -->
+
+                        <div
+                            id="premiumActivePanel"
+                            class="premium-active-panel"
+                            style="display: none;">
+
+                            <div class="premium-active-icon">
+                                <i class="fa-solid fa-gem"></i>
+                            </div>
+
+                            <h2>PREMIUM ACTIVADO</h2>
+
+                            <p class="premium-active-text">
+                                ¡Código activado con éxito!
+                                Ya tenés acceso a PREMIUM.
+                            </p>
+
+                            <div class="premium-status-info">
+
+                                <div>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>
+                                        <strong>Estado</strong>
+                                        <small id="premiumStatus">Activo</small>
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>
+                                        <strong>Válido hasta</strong>
+                                        <small id="premiumExpires">Comprobando...</small>
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <i class="fa-solid fa-clock"></i>
+                                    <span>
+                                        <strong>Tiempo restante</strong>
+                                        <small id="premiumRemaining">Comprobando...</small>
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <i class="fa-solid fa-download"></i>
+                                    <span>
+                                        <strong>Acceso</strong>
+                                        <small>Catálogo PREMIUM</small>
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                id="premiumLogout"
+                                class="premium-logout-button">
+
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                CERRAR SESIÓN PREMIUM
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- FORMULARIO DE ACTIVACIÓN -->
+
+                        <div id="premiumActivateForm">
+
+                            <h3>¿Ya tenés tu código?</h3>
+
+                            <p>
+                                Ingresá el código que recibiste después de tu compra.
+                            </p>
+
+                            <div class="premium-code-form">
+
+                                <input
+                                    type="text"
+                                    id="premiumCode"
+                                    placeholder="Código PREMIUM"
+                                    maxlength="30"
+                                    autocomplete="off">
+
+                                <button
+                                    type="button"
+                                    id="activatePremium">
+
+                                    <i class="fa-solid fa-unlock-keyhole"></i>
+                                    ACTIVAR
+
+                                </button>
+
+                            </div>
+
+                            <p
+                                class="premium-message"
+                                id="premiumMessage">
+                            </p>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================================= -->
+            <!-- CATÁLOGO PREMIUM -->
+            <!-- ========================================= -->
+
+            <section class="premium-catalog" id="premiumCatalog">
+
+                <div class="premium-catalog-heading">
+
+                    <div class="premium-section-label">
+                        <i class="fa-solid fa-gem"></i>
+                        COLECCIÓN EXCLUSIVA
+                    </div>
+
+                    <h2>PREMIUM COLLECTION</h2>
+
+                    <p>
+                        Historias completas, experiencias especiales
+                        y contenido exclusivo.
+                    </p>
+
+                </div>
+
+
+                <!-- ===================================== -->
+                <!-- JUEGOS DESTACADOS GENERADOS POR JS -->
+                <!-- ===================================== -->
+
+                <div class="premium-featured">
+
+                    <h3>
+                        <i class="fa-solid fa-star"></i>
+                        JUEGOS DESTACADOS
+                    </h3>
+
+                    <div
+                        class="premium-featured-grid"
+                        id="premiumFeaturedGrid">
+
+                        <!-- PREMIUM.JS GENERARÁ AQUÍ LAS TARJETAS DESTACADAS -->
+
+                        <button
+                            type="button"
+                            id="premiumExpandCatalog"
+                            class="premium-more-card">
+
+                            <div class="premium-more-icon">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+
+                            <h4>VER MÁS</h4>
+
+                            <p>Descubrí toda la colección</p>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ===================================== -->
+                <!-- CATÁLOGO COMPLETO -->
+                <!-- ===================================== -->
+
+                <div
+                    id="premiumFullCatalog"
+                    class="premium-full-catalog"
+                    style="display: none;">
+
+                    <div class="premium-full-catalog-heading">
+
+                        <h3>
+                            <i class="fa-solid fa-layer-group"></i>
+                            TODOS LOS JUEGOS PREMIUM
+                        </h3>
+
+                        <p>
+                            Explorá nuestra colección exclusiva.
+                        </p>
+
+                    </div>
+
+
+                    <!-- JUEGOS GENERADOS POR JAVASCRIPT -->
+
+                    <div
+                        id="premiumGamesGrid"
+                        class="premium-games-grid">
+                    </div>
+
+
+                    <!-- PAGINACIÓN -->
+
+                    <div
+                        id="premiumPagination"
+                        class="premium-pagination">
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ========================================= -->
+            <!-- INFORMACIÓN ADICIONAL -->
+            <!-- ========================================= -->
+
+            <section class="premium-information">
+
+                <h3>
+                    <i class="fa-solid fa-circle-info"></i>
+                    INFORMACIÓN PREMIUM
+                </h3>
+
+                <div class="premium-information-item">
+
+                    <i class="fa-solid fa-gem"></i>
+
+                    <div>
+                        <strong>Catálogo exclusivo</strong>
+
+                        <p>
+                            Accedé a juegos completos y contenido
+                            seleccionado especialmente para PREMIUM.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="premium-information-item">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                    <div>
+                        <strong>Incluye beneficios VIP</strong>
+
+                        <p>
+                            Disfrutá también de los beneficios
+                            de navegación y descarga de VIP.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="premium-information-item">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <div>
+                        <strong>30 días de acceso</strong>
+
+                        <p>
+                            Tu membresía PREMIUM tiene una duración
+                            de 30 días desde su activación.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="premium-information-item">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <div>
+                        <strong>Acceso protegido</strong>
+
+                        <p>
+                            El acceso a las descargas exclusivas
+                            requiere una membresía PREMIUM activa.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h3>PRISIONER0</h3>
+
+                <p>
+                    Traducciones y ports de Visual Novels en español.
+                </p>
+
+            </div>
+
+
+            <div class="footer-nav-links">
+
+                <a href="https://discord.gg/BS7uRGx62m"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <i class="fa-brands fa-discord"></i> Discord
+
+                </a>
+
+
+                <a href="https://ko-fi.com/prisioner0"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <i class="fa-solid fa-heart"></i> Ko-fi
+
+                </a>
+
+
+                <a href="https://www.tiktok.com/@prisioner079"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <i class="fa-brands fa-tiktok"></i> TikTok
+
+                </a>
+
+
+                <a href="https://www.youtube.com/@PRISIONER0-NV"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <i class="fa-brands fa-youtube"></i> YouTube
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom"
+             style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; max-width: 1200px; margin: 0 auto; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+
+            <p>
+                © 2026 PRISIONER0. Todos los derechos reservados.
+            </p>
+
+
+            <div class="footer-legal-links"
+                 style="display: flex; gap: 15px; font-size: 13px;">
+
+                <a href="privacidad.html"
+                   style="color: rgba(255,255,255,0.7); text-decoration: none;">
+
+                    Política de Privacidad
+
+                </a>
+
+
+                <a href="mailto:contacto@prisioner0.com"
+                   style="color: rgba(255,255,255,0.7); text-decoration: none;">
+
+                    <i class="fa-solid fa-envelope"></i>
+                    contacto@prisioner0.com
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ========================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================================= -->
+
+    <script src="assets/js/games-data.js"></script>
+    <script src="assets/js/premium-data.js"></script>
+    <script src="assets/js/games.js"></script>
+    <script src="assets/js/premium.js"></script>
+    <script src="assets/js/premium-activation.js"></script>
+
+</body>
+
+</html>

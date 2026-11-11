@@ -1,3 +1,4 @@
+
 /* =====================================================
    PRISIONER0 - INDEX.JS
    Funciones exclusivas de la página principal
@@ -55,11 +56,14 @@ if (featuredGames) {
    CREAR TARJETA DE JUEGO
 ===================================================== */
 
-function createGameCard(game) {
+function createGameCard(game, isPremium = false) {
 
     const card = document.createElement("a");
 
-    card.href = `juegos/${game.page}`;
+    card.href = isPremium
+        ? `juegos-premium/${game.page}`
+        : `juegos/${game.page}`;
+
     card.className = "game-card";
 
     card.innerHTML = `
@@ -511,13 +515,38 @@ if (searchInput) {
 
 
         /*
-            Buscar en TODOS los juegos del catálogo,
-            no solamente en los 36 visibles.
+            BUSCAR JUEGOS NORMALES Y PREMIUM.
+
+            Los juegos normales salen de catalogGames.
+            Los PREMIUM salen de premiumGames.
         */
 
-        const results = catalogGames.filter(game =>
-            game.title.toLowerCase().includes(value)
-        );
+        const premiumList =
+            typeof premiumGames !== "undefined"
+                ? premiumGames
+                : [];
+
+        const results = [
+
+            ...catalogGames
+                .filter(game =>
+                    game.title.toLowerCase().includes(value)
+                )
+                .map(game => ({
+                    game: game,
+                    isPremium: false
+                })),
+
+            ...premiumList
+                .filter(game =>
+                    game.title.toLowerCase().includes(value)
+                )
+                .map(game => ({
+                    game: game,
+                    isPremium: true
+                }))
+
+        ];
 
 
         /*
@@ -529,11 +558,15 @@ if (searchInput) {
 
         /*
             Mostrar resultados encontrados.
+            Cada juego abre su carpeta correcta.
         */
 
-        results.forEach(game => {
+        results.forEach(result => {
 
-            const card = createGameCard(game);
+            const card = createGameCard(
+                result.game,
+                result.isPremium
+            );
 
             moreGames.appendChild(card);
 
@@ -586,15 +619,20 @@ if (searchInput) {
 
 
         /*
-            Bajar al catálogo.
+            Bajar hasta los resultados de búsqueda.
         */
 
-        const position =
-            document.getElementById("juegos").offsetTop - 110;
+        requestAnimationFrame(() => {
 
-        window.scrollTo({
-            top: position,
-            behavior: "smooth"
+            const position =
+                moreGames.getBoundingClientRect().top +
+                window.scrollY - 110;
+
+            window.scrollTo({
+                top: position,
+                behavior: "smooth"
+            });
+
         });
 
     });
@@ -654,21 +692,38 @@ if (homeLink && hero) {
 
     });
 }
+
+
 function copiarTexto(idElemento, boton) {
-    const textoACopiar = document.getElementById(idElemento).innerText;
+
+    const textoACopiar =
+        document.getElementById(idElemento).innerText;
 
     navigator.clipboard.writeText(textoACopiar).then(() => {
+
         // Cambiar el texto e icono del botón temporalmente
+
         const contenidoOriginal = boton.innerHTML;
-        boton.innerHTML = '<i class="fa-solid fa-check"></i> ¡Copiado!';
+
+        boton.innerHTML =
+            '<i class="fa-solid fa-check"></i> ¡Copiado!';
+
         boton.classList.add('copied');
 
         // Restaurar después de 2 segundos
+
         setTimeout(() => {
+
             boton.innerHTML = contenidoOriginal;
+
             boton.classList.remove('copied');
+
         }, 2000);
+
     }).catch(err => {
+
         console.error('Error al copiar: ', err);
+
     });
 }
+

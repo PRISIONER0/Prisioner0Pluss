@@ -1,0 +1,623 @@
+
+/* =========================================
+   PRISIONER0 PREMIUM - PÁGINA PRINCIPAL
+========================================= */
+
+.premium-home {
+    position: relative;
+    width: 100%;
+    margin: 35px auto;
+    padding: 35px 25px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid rgba(177, 80, 255, 0.35);
+    border-radius: 18px;
+    background:
+        radial-gradient(
+            ellipse at 80% 50%,
+            rgba(126, 45, 190, 0.20),
+            transparent 55%
+        ),
+        linear-gradient(135deg, #17121f, #0d0d12 70%);
+}
+
+.premium-home-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.premium-home-info {
+    flex: 1;
+    min-width: 0;
+    z-index: 2;
+}
+
+/* =========================================
+   IDENTIDAD PREMIUM
+========================================= */
+
+.premium-home-label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 12px;
+    color: #d7a5ff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.premium-home-info h2 {
+    margin: 0 0 15px;
+    color: #ffffff;
+    font-size: clamp(25px, 4vw, 38px);
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.premium-home-info h2 span {
+    color: #c77aff;
+    text-shadow: 0 0 15px rgba(184, 91, 255, 0.5);
+}
+
+.premium-home-info p {
+    max-width: 480px;
+    margin: 0 0 24px;
+    color: #c5bdce;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   BOTÓN PREMIUM
+========================================= */
+
+.premium-home-button {
+    display: inline-block;
+    padding: 13px 22px;
+    border: 1px solid #d18aff;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #923bd0, #6421a0);
+    color: #ffffff !important;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none !important;
+    box-shadow: 0 0 18px rgba(169, 76, 255, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.premium-home-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(169, 76, 255, 0.55);
+}
+
+.premium-button-gem {
+    margin-right: 6px;
+    color: #edcaff;
+    text-shadow: 0 0 8px #d18aff;
+}
+
+/* =========================================
+   DIAMANTE 3D NEÓN PREMIUM
+========================================= */
+
+.premium-gem-icon {
+    position: relative;
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    margin-right: 9px;
+    perspective: 500px;
+    filter:
+        drop-shadow(0 0 5px #bc55ff)
+        drop-shadow(0 0 13px rgba(174, 55, 255, 0.8));
+}
+
+.premium-gem-icon svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    transform-style: preserve-3d;
+    animation:
+        premiumGemFloat 3s ease-in-out infinite,
+        premiumGemRotate 7s ease-in-out infinite;
+}
+
+@keyframes premiumGemFloat {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -8px;
+    }
+}
+
+@keyframes premiumGemRotate {
+    0%, 100% {
+        transform: rotateY(-18deg) rotateX(8deg);
+    }
+
+    50% {
+        transform: rotateY(18deg) rotateX(-8deg);
+    }
+}
+
+.premium-gem-icon::after {
+    content: "";
+    position: absolute;
+    inset: 20%;
+    border-radius: 50%;
+    background: #bd55ff;
+    filter: blur(20px);
+    opacity: 0.35;
+    z-index: -1;
+}
+
+/* =========================================
+   BIBLIOTECA - TARJETAS DE JUEGOS
+========================================= */
+
+.premium-home-covers {
+    width: 440px;
+    max-width: 100%;
+    flex-shrink: 0;
+    padding: 15px 0 5px;
+}
+
+.premium-game-stack {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    perspective: 1000px;
+}
+
+/* TARJETAS */
+
+.premium-game-card {
+    position: relative;
+    flex-shrink: 0;
+    width: 130px;
+    height: 195px;
+    overflow: hidden;
+    border: 1px solid rgba(207, 150, 255, 0.45);
+    border-radius: 9px;
+    background: #17121f;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    transition:
+        transform 0.5s ease,
+        margin 0.5s ease;
+}
+
+.premium-game-card + .premium-game-card {
+    margin-left: -35px;
+}
+
+.premium-game-card:nth-child(1) {
+    transform: rotate(-10deg) translateY(9px);
+    z-index: 1;
+}
+
+.premium-game-card:nth-child(2) {
+    transform: rotate(-4deg) translateY(-2px);
+    z-index: 2;
+}
+
+.premium-game-card:nth-child(3) {
+    transform: rotate(4deg) translateY(-2px);
+    z-index: 3;
+}
+
+.premium-game-card:nth-child(4) {
+    transform: rotate(10deg) translateY(9px);
+    z-index: 4;
+}
+
+/* =========================================
+   PORTADAS DE LOS JUEGOS PREMIUM
+========================================= */
+
+.premium-game-image {
+    position: relative;
+    width: 100%;
+    height: 155px;
+    overflow: hidden;
+    background: #21182b;
+}
+
+.premium-game-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* PORTADA MÁS HISTORIAS */
+
+.premium-more-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #54246f, #17101f);
+}
+
+.premium-more-image span {
+    color: #e7c4ff;
+    font-size: 55px;
+    font-weight: 300;
+    text-shadow: 0 0 20px #bd55ff;
+}
+
+/* TÍTULOS DE LOS JUEGOS */
+
+.premium-game-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 39px;
+    padding: 4px;
+    box-sizing: border-box;
+    background: #21182b;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* EFECTO DE PÁGINAS DESPLEGÁNDOSE */
+
+.premium-game-stack:hover .premium-game-card:nth-child(1) {
+    transform: rotate(-14deg) translate(-10px, 0);
+}
+
+.premium-game-stack:hover .premium-game-card:nth-child(2) {
+    transform: rotate(-7deg) translate(-3px, -8px);
+}
+
+.premium-game-stack:hover .premium-game-card:nth-child(3) {
+    transform: rotate(7deg) translate(3px, -8px);
+}
+
+.premium-game-stack:hover .premium-game-card:nth-child(4) {
+    transform: rotate(14deg) translate(10px, 0);
+}
+
+/* TEXTO INFERIOR DE LA BIBLIOTECA */
+
+.premium-stack-caption {
+    margin-top: 8px;
+    color: #cda1ef;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.premium-stack-caption span {
+    color: #d58aff;
+    text-shadow: 0 0 10px #b94aff;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVE - CELULARES
+========================================= */
+
+@media (max-width: 700px) {
+
+    .premium-home {
+        padding: 28px 18px;
+        margin: 25px auto;
+    }
+
+    .premium-home-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .premium-home-info p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .premium-home-covers {
+        width: 100%;
+        max-width: 390px;
+    }
+
+    .premium-game-stack {
+        height: 190px;
+    }
+
+    .premium-game-card {
+        width: 112px;
+        height: 170px;
+    }
+
+    .premium-game-card + .premium-game-card {
+        margin-left: -29px;
+    }
+
+    .premium-game-image {
+        height: 135px;
+    }
+
+    .premium-game-title {
+        min-height: 35px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .premium-home-info h2 {
+        font-size: 24px;
+    }
+
+    .premium-game-card {
+        width: 100px;
+        height: 155px;
+    }
+
+    .premium-game-card + .premium-game-card {
+        margin-left: -26px;
+    }
+
+    .premium-game-image {
+        height: 120px;
+    }
+
+    .premium-game-title {
+        min-height: 35px;
+        font-size: 8px;
+    }
+}
+
+/* =========================================
+   ACCESIBILIDAD - REDUCIR MOVIMIENTO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .premium-home *,
+    .premium-home *::before,
+    .premium-home *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+.prisionero-card-banner {
+  position: relative;
+  display: block;
+  background-color: #120b1b;
+  border: 2px solid #ec4899;
+  border-radius: 16px;
+  padding: 22px 24px;
+  max-width: 950px;
+  width: 100%;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  box-shadow: 0 0 25px rgba(236, 72, 153, 0.35), inset 0 0 15px rgba(168, 85, 247, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 0 auto;
+}
+
+.prisionero-card-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px rgba(236, 72, 153, 0.55), inset 0 0 20px rgba(168, 85, 247, 0.25);
+}
+
+.badge-exclusivo-premium {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: linear-gradient(135deg, #ec4899, #a855f7);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.6);
+}
+
+.card-banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.diamond-icon {
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, #180e29 0%, #0d0617 100%);
+  border: 1px solid #581c87;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 20px rgba(217, 70, 239, 0.25);
+}
+
+.neon-diamond {
+  color: #ff3366;
+  filter: drop-shadow(0 0 8px rgba(255, 51, 102, 0.8));
+}
+
+.floating-diamond {
+  animation: floatMotion 3s ease-in-out infinite;
+}
+
+@keyframes floatMotion {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(3deg); }
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.blink-neon {
+  animation: neonGlowBlink 2s infinite alternate;
+}
+
+@keyframes neonGlowBlink {
+  0% {
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(236, 72, 153, 0.5);
+  }
+  50% {
+    color: #f472b6;
+    text-shadow: 0 0 10px #ec4899, 0 0 20px #a855f7;
+  }
+  100% {
+    color: #c084fc;
+    text-shadow: 0 0 8px #a855f7, 0 0 18px #ec4899;
+  }
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: #bfaad2;
+}
+
+.card-features {
+  display: flex;
+  gap: 18px;
+  font-size: 0.85rem;
+  color: #e2d9f3;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+.feature-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Colores exactos para los iconos vectoriales inferiores */
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon-crown {
+  color: #f59e0b;
+  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.6));
+}
+
+.icon-diamond {
+  color: #c084fc;
+  filter: drop-shadow(0 0 4px rgba(192, 132, 252, 0.8));
+}
+
+/* Botón derecho */
+.card-banner-right {
+  flex-shrink: 0;
+}
+
+.btn-premium {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
+}
+
+.price-tag {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+
+.pulse-btn {
+  animation: buttonPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.7);
+  }
+}
+
+.btn-premium .arrow {
+  transition: transform 0.2s;
+}
+
+.prisionero-card-banner:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Adaptabilidad móvil */
+@media (max-width: 768px) {
+  .card-banner-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .card-banner-left {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .title-row {
+    justify-content: center;
+  }
+  
+  .card-features {
+    justify-content: center;
+  }
+  
+  .btn-premium {
+    justify-content: center;
+    width: 100%;
+  }
+}
