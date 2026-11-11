@@ -3,23 +3,23 @@
 
 <head>
 
-        <script>
+<script>
 (function() {
 
     const vipSession =
         localStorage.getItem("prisioner0_vip_session");
 
-    if (vipSession) {
+    const premiumSession =
+        localStorage.getItem("prisioner0_premium_session");
+
+    // Si tiene VIP o Premium, no mostrar publicidad.
+    if (vipSession || premiumSession) {
         return;
     }
 
-    const admaven =
-        document.createElement("script");
+    const admaven = document.createElement("script");
 
-    admaven.setAttribute(
-        "data-cfasync",
-        "false"
-    );
+    admaven.setAttribute("data-cfasync", "false");
 
     admaven.src =
         "//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1723098";
