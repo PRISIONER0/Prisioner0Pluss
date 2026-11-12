@@ -61,6 +61,15 @@ const games = [
     // ================================
 
     {
+        title: "Sundry heart(DAY 2)",
+        page: "sundry-heart.html",
+        cover: "sundry-heart.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },    
+    {
         title: "Criminally yours mask on",
         page: "criminally-yours-mask-on.html",
         cover: "criminally-yours-mask-on.webp",
@@ -140,16 +149,7 @@ const games = [
         language: "Español/Portuguese",
         pc: true,
         android: true,
-    },                                         
-    {
-        title: "Sundry heart",
-        page: "sundry-heart.html",
-        cover: "sundry-heart.webp",
-        featured: false,
-        language: "Español/Portuguese",
-        pc: true,
-        android: true,
-    },                                    
+    },                                                                         
     {
         title: "Sweets",
         page: "sweets.html",
