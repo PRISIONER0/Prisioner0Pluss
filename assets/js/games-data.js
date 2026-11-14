@@ -61,6 +61,15 @@ const games = [
     // ================================
 
     {
+        title: "Leatherbound",
+        page: "leatherbound.html",
+        cover: "leatherbound.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Undress me",
         page: "undress-me.html",
         cover: "undress-me.webp",
