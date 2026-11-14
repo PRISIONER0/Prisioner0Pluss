@@ -192,7 +192,7 @@ async function requestVipDownload(platform) {
         if (platform === "pc") {
 
             window.location.href =
-                "https://github.com/PRISIONER0/ACupofDreams-Espa-ol/releases/download/v1.0/PRISIONER0_Bloody.Painter.Dating.Sim.DLC.zip";
+                "https://pub-622e9a81bd3346fdb72ca5e034ea84a9.r2.dev/Spotlight-PRISIONER0.zip";
 
             return;
         }
@@ -205,7 +205,7 @@ async function requestVipDownload(platform) {
         if (platform === "android") {
 
             window.location.href =
-                "https://github.com/PRISIONER0/ACupofDreams-Espa-ol/releases/download/v1.0/PRISIONER0_Bloody.Painter.Dating.Sim.DLC.apk";
+                "https://pub-622e9a81bd3346fdb72ca5e034ea84a9.r2.dev/wtsl.prisioner0-0.3-1794627931-release.apk";
 
             return;
         }
