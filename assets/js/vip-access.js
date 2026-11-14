@@ -125,7 +125,10 @@ function showVipAccessUnlocked() {
 
             <span class="vip-flags">
                 <img src="https://flagcdn.com/20x15/es.png"
-                     alt="Español">
+                    alt="Español">
+
+                <img src="https://flagcdn.com/20x15/br.png"
+                    alt="Português">
             </span>
 
             Descargar Traducción (PC)
@@ -140,7 +143,10 @@ function showVipAccessUnlocked() {
 
             <span class="vip-flags">
                 <img src="https://flagcdn.com/20x15/es.png"
-                     alt="Español">
+                    alt="Español">
+
+                <img src="https://flagcdn.com/20x15/br.png"
+                    alt="Português">
             </span>
 
             Descargar Juego (Android)
