@@ -6,6 +6,16 @@
 const premiumGames = [
 
     {
+        title: "Homicipher V2.0.6",
+        page: "homicipher.html",
+        cover: "homicipher.webp",
+
+        language: "Español/Portuguese/English",
+
+        pc: true,
+        android: true
+    },
+    {
         title: "Error 143 (COMPLETO)",
         page: "error143.html",
         cover: "error143.webp",
@@ -15,7 +25,6 @@ const premiumGames = [
         pc: true,
         android: true
     },
-
     {
         title: "A date with death (COMPLETO)",
         page: "a-date-with-death.html",

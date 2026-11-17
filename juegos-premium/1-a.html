@@ -8,8 +8,7 @@
     <!-- ========================================= -->
 
 <script>
-<script>
-(function() {
+(async function() {
 
     const vipSession =
         localStorage.getItem("prisioner0_vip_session");
@@ -17,17 +16,77 @@
     const premiumSession =
         localStorage.getItem("prisioner0_premium_session");
 
-    // Si tiene VIP o Premium, no mostrar publicidad.
-    if (vipSession || premiumSession) {
+    const VIP_API =
+        "https://prisioner0-vip-api.javiieergutierrez01.workers.dev";
+
+    const PREMIUM_API =
+        "https://prisioner0-premium-api.javiieergutierrez01.workers.dev";
+
+
+    async function checkSession(api, token, type) {
+
+        if (!token) return false;
+
+        try {
+
+            const response = await fetch(`${api}/check-session`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    session_token: token
+                })
+            });
+
+            if (!response.ok) return false;
+
+            const data = await response.json();
+
+            if (type === "vip") {
+                return data.ok === true && data.vip === true;
+            }
+
+            if (type === "premium") {
+                return data.ok === true && data.premium === true;
+            }
+
+            return false;
+
+        } catch (error) {
+
+            console.error("Error comprobando suscripción:", error);
+            return false;
+        }
+    }
+
+
+    const [vipActive, premiumActive] = await Promise.all([
+
+        checkSession(VIP_API, vipSession, "vip"),
+
+        checkSession(PREMIUM_API, premiumSession, "premium")
+
+    ]);
+
+
+    // Si tiene VIP o Premium activo, no cargar publicidad.
+
+    if (vipActive || premiumActive) {
         return;
     }
+
+
+    // =================================
+    // ADMAVEN
+    // =================================
 
     const admaven = document.createElement("script");
 
     admaven.setAttribute("data-cfasync", "false");
 
     admaven.src =
-        "//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1723098";
+        "//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1722241";
 
     document.head.appendChild(admaven);
 
@@ -727,6 +786,7 @@
 
 
 <script>
+    
 (function() {
 
     const PREMIUM_API = "https://prisioner0-premium-api.javiieergutierrez01.workers.dev";
