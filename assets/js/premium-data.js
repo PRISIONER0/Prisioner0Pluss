@@ -26,7 +26,7 @@ const premiumGames = [
         android: true
     },
     {
-        title: "A date with death (COMPLETO)",
+        title: "A date with death (COMPLETO OPTIMIZADO PARA TODOS LOS ANDROIDS)",
         page: "a-date-with-death.html",
         cover: "a-date-with-death.webp",
 
