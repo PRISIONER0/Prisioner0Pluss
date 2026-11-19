@@ -61,6 +61,15 @@ const games = [
     // ================================
 
     {
+        title: "Our love is electrifying at work",
+        page: "our-love-is-electrifying-at-work.html",
+        cover: "our-love-is-electrifying-at-work.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Leatherbound",
         page: "leatherbound.html",
         cover: "leatherbound.webp",
