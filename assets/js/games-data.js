@@ -61,6 +61,15 @@ const games = [
     // ================================
 
     {
+        title: "Nuestra casa (completo)",
+        page: "nuestra-casa.html",
+        cover: "nuestra-casa.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Our love is electrifying at work",
         page: "our-love-is-electrifying-at-work.html",
         cover: "our-love-is-electrifying-at-work.webp",
@@ -248,16 +257,7 @@ const games = [
         language: "Español/Portuguese",
         pc: true,
         android: true,
-    }, 
-    {
-        title: "Nuestra casa",
-        page: "nuestra-casa.html",
-        cover: "nuestra-casa.webp",
-        featured: false,
-        language: "Español/Portuguese",
-        pc: true,
-        android: true,
-    },                      
+    },                       
     {
         title: "Cyber paranoia",
         page: "cyber-paranoia.html",
