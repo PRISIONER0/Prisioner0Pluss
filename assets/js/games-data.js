@@ -61,6 +61,15 @@ const games = [
     // ================================
 
     {
+        title: "Requiems echo",
+        page: "requiems-echo.html",
+        cover: "requiems-echo.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Nuestra casa (completo)",
         page: "nuestra-casa.html",
         cover: "nuestra-casa.webp",
