@@ -61,6 +61,15 @@ const games = [
     // ================================
 
     {
+        title: "Never endream",
+        page: "neverendream.html",
+        cover: "neverendream.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Requiems echo",
         page: "requiems-echo.html",
         cover: "requiems-echo.webp",
