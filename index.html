@@ -3,35 +3,8 @@
 
 <head>
 
-<script>
-(function() {
 
-    const vipSession =
-        localStorage.getItem("prisioner0_vip_session");
-
-    const premiumSession =
-        localStorage.getItem("prisioner0_premium_session");
-
-    // Si tiene VIP o Premium, no mostrar publicidad.
-    if (vipSession || premiumSession) {
-        return;
-    }
-
-    const admaven = document.createElement("script");
-
-    admaven.setAttribute("data-cfasync", "false");
-
-    admaven.src =
-        "//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1723098";
-
-    document.head.appendChild(admaven);
-
-})();
-</script>
-    <!-- admaven -->
-<meta name='admaven-placement' content=BpdU8qja8>
-
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>PRISIONER0+ | Traducciones de Visual Novels sin Censura en Español/Portuguese para PC y Android</title>
@@ -79,13 +52,7 @@
         </div>
     </div>
 
-<!-- EXOCLICK - BANNER PC -->
-<div class="ad-container ad-desktop" id="exoTop"></div>
-
-<!-- EXOCLICK - BANNER MÓVIL -->
-<div class="ad-container ad-mobile" id="exoTopMobile"></div>
-
-    <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
+<!-- BARRA DE NAVEGACIÓN SUPERIOR -->
     <header class="site-header">
         <div class="nav-container">
             <div class="brand-logo">
@@ -605,15 +572,12 @@
     <script src="assets/js/games-data.js"></script>
     <script src="assets/js/premium-data.js"></script>
     <script src="assets/js/vip.js"></script>
-    <script src="assets/js/vip-ad-control.js"></script>
     <script src="assets/js/index.js"></script>
 
     <div id="backToTop" class="back-to-top" onclick="scrollToTop()">
         <i class="fa-solid fa-arrow-up"></i>
     </div>
 
-<!-- *CONTENEDOR EXOCLICK - BANNER ADHESIVO* -->
-<div id="exoStickyContainer"></div>
-
+<script src="assets/js/vip-ad-control.js"></script>
 </body>
 </html>
