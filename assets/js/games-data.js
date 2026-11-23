@@ -9,11 +9,11 @@ const games = [
     // Máximo 5 con featured: true
     // ================================
     {
-        title: "The kid at the back nsfw",
+        title: "The kid at the back nsfw (ARREGLADO)",
         page: "the-kid-at-the-back-nsfw.html",
         cover: "the-kid-at-the-back.webp",
         featured: true,
-        language: "Español",
+        language: "Español/Portuguese",
         pc: true,
         android: true,
     },
