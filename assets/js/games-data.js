@@ -61,6 +61,15 @@ const games = [
     // ================================
 
     {
+        title: "Stay with me",
+        page: "stay-with-me.html",
+        cover: "stay-with-me.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Never endream",
         page: "neverendream.html",
         cover: "neverendream.webp",
