@@ -61,6 +61,15 @@ const games = [
     // ================================
 
     {
+        title: "Convicted hearts",
+        page: "convicted-hearts.html",
+        cover: "convicted-hearts.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Stay with me",
         page: "stay-with-me.html",
         cover: "stay-with-me.webp",
