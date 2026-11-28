@@ -61,6 +61,15 @@ const games = [
     // ================================
 
     {
+        title: "One nighter",
+        page: "one-nighter.html",
+        cover: "one-nighter.webp",
+        featured: false,
+        language: "Español/Portuguese",
+        pc: true,
+        android: true,
+    },
+    {
         title: "Convicted hearts",
         page: "convicted-hearts.html",
         cover: "convicted-hearts.webp",
